@@ -15,12 +15,6 @@ The {{PLATFORM_NAME}} API is a RESTful API that provides access to the platform'
 ## Sections
 
 - [Overview](./overview.md)
-- [Authentication](./authentication.md)
-- [Endpoints](./endpoints.md)
-
-## Getting Started
-
-To get started with the {{PLATFORM_NAME}} API, first read the [Overview](./overview.md) to understand the basic concepts and conventions. Then, learn about [Authentication](./authentication.md) to understand how to authenticate your requests. Finally, explore the [Endpoints](./endpoints.md) documentation to learn about the available endpoints and how to use them.
 
 ## Secure Enclave Access
 

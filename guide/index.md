@@ -8,10 +8,10 @@
 
 ### Platform Features
 
-- [Cohort Builder](./cohort-builder.md): Create and refine patient cohorts based on clinical and genomic criteria
-- [Variant Xplorer](./variant-explorer.md): Investigate genetic variants and their distributions
-- [Secure Enclave Access](./secure-enclave-access.md): Analyze sensitive data in a protected environment
-- [Data Browser](./data-browser.md): High level overview of available clinical datasets and metadata
+- [Cohort Builder](/guide/cohort-builder.md): Create and refine patient cohorts based on clinical and genomic criteria
+- [Variant Xplorer](/guide/variant-explorer.md): Investigate genetic variants and their distributions
+- [Secure Enclave Access](/guide/secure-enclave-access.md): Analyze sensitive data in a protected environment
+- [Data Browser](/guide/data-browser.md): High level overview of available clinical datasets and metadata
 
 ### Documentation
 
