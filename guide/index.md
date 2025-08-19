@@ -1,16 +1,19 @@
-# AnalytiXIN Clinical Genomic Portal User Guide
+<iframe src="https://indiana-my.sharepoint.com/personal/emmakou_iu_edu/_layouts/15/embed.aspx?UniqueId=dcb6932a-680e-4099-beef-1541db01284f&embed=%7B%22ust%22%3Afalse%2C%22hv%22%3A%22CopyEmbedCode%22%7D&referrer=StreamWebApp&referrerScenario=EmbedDialog.Create" width="640" height="360" frameborder="0" scrolling="no" allowfullscreen title="Biobankvideo1 2.mp4"></iframe>
 
-Welcome to the AnalytiXIN Clinical Genomic Portal User Guide. This guide provides comprehensive information about using the platform to explore, build cohorts, and access multi-modal clinical and genomic data collected from a diverse patient population across Indiana.
+### Introduction
 
-## Introduction
+- [What is {{PLATFORM_FULL_NAME}}?](/guide/what-is-biobank.md)
+- [Getting Started (Account Creation & Authentication)](/guide/getting-started.md)
+- [Indiana Biobank vs. AnalytiXIN](/guide/biobank-vs-axin.md)
 
-- [What is AnalytiXIN Clinical Genomic Portal?](./what-is-biobank.md)
-- [Getting Started](./getting-started.md)
-- [Indiana Biobank vs. AnalytiXIN](./biobank-vs-axin.md)
+### Platform Features
 
-## Platform Features
+- [Cohort Builder](./cohort-builder.md): Create and refine patient cohorts based on clinical and genomic criteria
+- [Variant Xplorer](./variant-explorer.md): Investigate genetic variants and their distributions
+- [Secure Enclave Access](./secure-enclave-access.md): Analyze sensitive data in a protected environment
+- [Data Browser](./data-browser.md): High level overview of available clinical datasets and metadata
 
-- [Data Browser](./data-browser.md)
-- [Cohort Builder](./cohort-builder.md)
-- [Variant Xplorer](./variant-explorer.md)
-- [Secure Enclave Access](./secure-enclave-access.md)
+### Documentation
+
+- [Contributing to Documentation](/guide/contributing.md): See something that could use a bit more detail? Learn how to contribute edits and improvements to this documentation
+

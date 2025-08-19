@@ -2,16 +2,16 @@
 layout: home
 
 hero:
-  name: "AnalytiXIN"
-  text: "Clinical Genomic Portal"
+  name: "{{PLATFORM_FULL_NAME}}"
+  text: ""
   tagline: "Explore, build cohorts, and access multi-modal clinical and genomic data from across Indiana"
   actions:
     - theme: brand
       text: Get Started
       link: /guide/getting-started
     - theme: alt
-      text: Indiana Biobank
-      link: https://biobank.sca.iu.edu/
+      text: {{PLATFORM_NAME}}
+      link: {{WEBSITE_URL}}
 
 features:
   - icon: 📊
@@ -28,21 +28,14 @@ features:
     details: Access sensitive data in a controlled environment that ensures compliance and security.
 ---
 
-# Welcome to AnalytiXIN Clinical Genomic Portal
+# Welcome to {{PLATFORM_FULL_NAME}}
 
-This documentation site provides comprehensive information about using the AnalytiXIN Clinical Genomic Portal to explore, build cohorts, and access multi-modal clinical and genomic data collected from a diverse patient population across Indiana.
+This documentation site provides comprehensive information about using the {{PLATFORM_FULL_NAME}} to explore, build cohorts, and access multi-modal clinical and genomic data collected from a diverse patient population across Indiana.
 
-## What is AnalytiXIN Clinical Genomic Portal?
+## What is {{PLATFORM_FULL_NAME}}?
 
-The AnalytiXIN Clinical Genomic Portal is a comprehensive platform that enables researchers to explore, build cohorts, and access multi-modal clinical and genomic data collected from a diverse patient population across Indiana. It serves as a bridge between researchers and the rich clinical and genomic data resources available through the Indiana Biobank.
+The {{PLATFORM_FULL_NAME}} is a comprehensive platform that enables researchers to explore, build cohorts, and access multi-modal clinical and genomic data collected from a diverse patient population across Indiana. It serves as a bridge between researchers and the rich clinical and genomic data resources available through the Indiana Biobank.
 
-## Key Features
+## User Guide
 
-- **Data Browser**: Explore files, datasets, phenotypes, and metadata
-- **Cohort Builder**: Create and manage patient cohorts using filters and clinical/genomic criteria
-- **Variant Xplorer**: Investigate genetic variants and their distributions
-- **Secure Enclave**: Access sensitive data in a controlled environment that ensures compliance and security
-
-## Getting Started
-
-To get started with the AnalytiXIN Clinical Genomic Portal, check out the [Getting Started](/guide/getting-started) guide, which will walk you through the platform's core features and provide tips for effective data exploration and cohort management.
+<!--@include: ./guide/index.md-->

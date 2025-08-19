@@ -1,13 +1,13 @@
 # API Overview
 
-The AnalytiXIN Clinical Genomic Portal API is a RESTful API that allows you to programmatically interact with the platform. This overview provides information about the API's general concepts, conventions, and usage.
+The {{PLATFORM_FULL_NAME}} API is a RESTful API that allows you to programmatically interact with the platform. This overview provides information about the API's general concepts, conventions, and usage.
 
 ## Base URL
 
-All API requests should be made to the base URL of the AnalytiXIN Clinical Genomic Portal:
+All API requests should be made to the base URL of the {{PLATFORM_FULL_NAME}}:
 
 ```
-https://biobank.sca.iu.edu/api/v1
+{{WEBSITE_URL}}/api/v1
 ```
 
 ## API Versioning
