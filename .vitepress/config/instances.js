@@ -8,9 +8,10 @@ export const INSTANCE_CONFIG = {
         PLATFORM_FULL_NAME: 'AnalytiXIN Clinical Genomic Portal',
         ORGANIZATION: 'AnalytiXIN',
         SUPPORT_EMAIL: 'axin@iu.edu',
-        WEBSITE_URL: 'https://axin.sca.iu.edu/',
-        GITHUB_URL: 'https://github.com/your-org/analytixin',
-        COPYRIGHT_YEAR: '2025'
+        // WEBSITE_URL: 'https://axin.sca.iu.edu/',
+        WEBSITE_URL: 'https://researcher.analytixindiana.com/',
+        GITHUB_URL: 'https://github.com/iusca/biobank-docs',
+        COPYRIGHT_YEAR: new Date().getFullYear().toString()
     },
 
     biobank: {
@@ -19,8 +20,8 @@ export const INSTANCE_CONFIG = {
         ORGANIZATION: 'Indiana Biobank',
         SUPPORT_EMAIL: 'inbiobnk@iu.edu',
         WEBSITE_URL: 'https://biobank.sca.iu.edu/',
-        GITHUB_URL: 'https://github.com/your-org/biobank',
-        COPYRIGHT_YEAR: '2025'
+        GITHUB_URL: 'https://github.com/iusca/biobank-docs',
+        COPYRIGHT_YEAR: new Date().getFullYear().toString()
     }
 };
 

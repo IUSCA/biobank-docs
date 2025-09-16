@@ -24,7 +24,7 @@ features:
     title: Variant Xplorer
     details: Investigate genetic variants and their distributions with advanced visualization tools.
   - icon: 🔒
-    title: Secure Enclave
+    title: Trusted Research Environment
     details: Access sensitive data in a controlled environment that ensures compliance and security.
 ---
 

@@ -47,7 +47,7 @@ A well-written description helps other researchers understand and review your re
 
 After creating a cohort in the {{PLATFORM_FULL_NAME}}, researchers have the option to save and lock the cohort. Locking a cohort preserves its exact composition at a specific point in time and ensures that no further modifications—such as adding or removing participants—can be made. If changes are needed later, the locked cohort must first be duplicated to create a new, editable version.
 
-Once a cohort is locked, researchers may submit a formal request to access participant-level clinical, phenotype, and genomic data for that cohort. Once approved, access to these sensitive data will be granted within a secure enclave, where analyses can be conducted in compliance with data governance and privacy protections.
+Once a cohort is locked, researchers may submit a formal request to access participant-level clinical, phenotype, and genomic data for that cohort. Once approved, access to these sensitive data will be granted within a trusted research environment, where analyses can be conducted in compliance with data governance and privacy protections.
 
 ![Request access step 1](/public/images/screenshots/cohort-builder-request-access-1.png)
 ![Request access step 2](/public/images/screenshots/cohort-builder-request-access-2.png)
@@ -74,7 +74,7 @@ As part of the approval process, a representative from IHIE (Indiana Health Info
 
 This transparency allows researchers to stay informed about their request status and plan their research activities accordingly.
 
-## Secure Enclave Access
+## Trusted Research Environment Access
 
-Using a [secure enclave](./secure-enclave-access.md) is necessary when working with deidentified {{PLATFORM_FULL_NAME}} participant clinical data or raw genomic sequencing information. A secure enclave provides a controlled environment that enforces strict data access, auditing, and computational restrictions, ensuring compliance with regulatory and ethical standards while minimizing the risk of unauthorized data exposure or misuse.
+Using a [trusted research environment](./trusted-research-environment-setup.md) is necessary when working with deidentified {{PLATFORM_FULL_NAME}} participant clinical data or raw genomic sequencing information. A trusted research environment provides a controlled environment that enforces strict data access, auditing, and computational restrictions, ensuring compliance with regulatory and ethical standards while minimizing the risk of unauthorized data exposure or misuse.
 

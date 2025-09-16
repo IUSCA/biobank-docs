@@ -140,6 +140,6 @@ That's it! We've learned how to:
 2. Combine cohorts using union and intersection operations
 3. Submit the cohort for data access requests. 
 
-The Cohort Builder is a flexible and powerful tool that allows you to define precisely the group of participants you're interested in studying. Once you're satisfied with your cohort, you can save it, lock it, and request access to participant-level data through the secure enclave.
+The Cohort Builder is a flexible and powerful tool that allows you to define precisely the group of participants you're interested in studying. Once you're satisfied with your cohort, you can save it, lock it, and request access to participant-level data through the trusted research environment.
 
 Thank you for watching this tutorial on the Biobank Research Portal's Cohort Builder!

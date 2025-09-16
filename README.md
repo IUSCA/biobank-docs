@@ -1,6 +1,6 @@
-# AnalytiXIN Documentation
+# Biobank Research Portal Documentation
 
-User documentation for the AnalytiXIN Clinical Genomic Portal built with VitePress.
+User documentation for the Biobank Clincal Genomic Research Portal 
 
 ## Docker Setup
 

@@ -1,8 +1,8 @@
-# Contributing to {{PLATFORM_FULL_NAME}} Documentation
+# Contributing to Documentation
 
 ## Introduction
 
-Thank you for your interest in contributing to the {{PLATFORM_FULL_NAME}} documentation! This guide will help you understand how to contribute edits, improvements, and new content to this repository.
+Thank you for your interest in contributing to the documentation! This guide will help you understand how to contribute edits, improvements, and new content to this repository.
 
 The documentation is built using [VitePress](https://vitepress.dev/) and hosted on GitHub at [https://github.com/iusca/biobank-docs](https://github.com/iusca/biobank-docs).
 

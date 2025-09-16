@@ -5,6 +5,7 @@ import { withMermaid } from "vitepress-plugin-mermaid";
 const currentConfig = getCurrentConfig();
 
 export default withMermaid({
+  base: '/docs/',
   title: `${currentConfig.PLATFORM_NAME} Documentation`,
   description: `User documentation for the ${currentConfig.PLATFORM_FULL_NAME}`,
 
@@ -63,7 +64,8 @@ export default withMermaid({
             { text: "Cohort Builder", link: "/guide/cohort-builder" },
             { text: "Variant Xplorer", link: "/guide/variant-explorer" },
             { text: "Data Browser", link: "/guide/data-browser" },
-            { text: "Secure Enclave Access", link: "/guide/secure-enclave-access" },
+            { text: "Trusted Research Environment Setup", link: "/guide/trusted-research-environment-setup" },
+            { text: "Trusted Research Environment Usage", link: "/guide/trusted-research-environment-usage" },
           ],
         },
       ],

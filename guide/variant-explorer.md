@@ -35,6 +35,6 @@ Variant Xplorer offers various filtering options to narrow down your search:
 
 ## Integration with Cohort Builder
 
-Variant Xplorer is integrated with the Cohort Builder, allowing you to define cohorts based on specific genetic variants.
+Variant Xplorer is integrated with the [Cohort Builder](/guide/cohort-builder.md), allowing you to define cohorts based on specific genetic variants.
 
 This integration enables powerful genotype-phenotype analyses and facilitates the discovery of clinically relevant genetic associations.
