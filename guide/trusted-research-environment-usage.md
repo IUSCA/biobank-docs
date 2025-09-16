@@ -18,7 +18,7 @@ Terminal Application:
 
 ![Terminal Example](../public/images/screenshots/tre-terminal-example.png)
 
-### Working with Data
+## Working with Data
 
 Shared data will be available in designated directories (typically `/data/common`)
 
@@ -32,7 +32,7 @@ Please configure your scripts to write any outputs to `/data/output`
 
 In order to conserve cloud resources, raw sequencing data is made available 'on-demand' by default. For downloading raw data within the TRE, please refer to the [API client guide](api-client.md)
 
-### Running Analysis
+## Running Analysis
 
 ```
 cd /data/common/scripts
@@ -40,7 +40,7 @@ R < example_script.r --no-save
 ```
 
 
-### Available Analysis Tools
+## Available Analysis Tools
 
 The Trusted Research Environment comes with a suite of pre-installed tools for various types of analysis:
 
@@ -66,7 +66,7 @@ The Trusted Research Environment comes with a suite of pre-installed tools for v
 - **annovar**: A tool for annotating genetic variants.
 - **METAL**: A tool for meta-analysis of genome-wide association scans.
 
-#### R Packages
+## R Packages
 
 The R environment includes a comprehensive set of packages for statistical analysis and bioinformatics:
 
