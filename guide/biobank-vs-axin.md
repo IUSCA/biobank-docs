@@ -1,35 +1,25 @@
 # Indiana Biobank vs. AnalytiXIN
 
-The Indiana Biobank and AnalytiXIN (also referred to as AnalytixIndiana) are closely connected but serve distinct purposes:
+The Indiana Biobank and AnalytiXIN run the same research portal software and work with very similar data, but they are separate instances with different datasets loaded. The primary reason for this distinction is that datasets are governed by different terms of use — some are available only for academic research, others under terms that also permit commercial use. Each instance loads the datasets appropriate to its user base.
 
 ## Indiana Biobank
 
-- Manages participant recruitment and recall, sample collection, and sample management
+The Indiana Biobank manages participant recruitment, sample collection, and sample management. Its portal instance is for academic researchers and collaborators, and loads datasets available under academic research terms.
 
-- Maintains a dedicated instance of the research data portal for academic researchers and other collaborators
+**Who can access the cohort browser:** Any registered user
 
-- Facilitates internal access to detailed biospecimen and clinical/genomic datasets for Indiana Biobank-approved projects
+**Who can access participant-level data:** Dependent on the collaboration agreement under which the genomic data was generated
 
-- Participant Viewer: Visualize and drill into individual-level data
+**How to request access:** Submit a data access request through the portal with a summary of your research objectives. See [Requesting Data Access](/guide/cohort-builder.md#requesting-data-access) for the full process.
+
+**Portal:** [https://biobank.sca.iu.edu/](https://biobank.sca.iu.edu/)
 
 ## AnalytiXIN
 
-- An Indiana statewide consortium
+AnalytiXIN is an Indiana statewide consortium providing academic and industry partners with de-identified clinical and genomic data from the Indiana Biobank and other contributors such as IU Health. Its portal instance loads datasets available under terms that permit both academic and commercial use, making it suitable for industry-partnered research.
 
-- Provides industry and academic partners with limited, de-identified subsets of Indiana Biobank data and EHR data from other data contributors, such as IU Health
+**Portal:** [https://researcher.analytixindiana.com/](https://researcher.analytixindiana.com/)
 
-- Serves as a collaborative gateway for industry to work with researchers at Indiana universities
+---
 
-- Enables joint research opportunities, where full access may be granted through partnerships
-
-This distinction ensures appropriate data governance and access control for both academic and commercial uses.
-
-## Indiana Biobank Access
-
-Who can access cohort browser: anyone
-
-Who can access data: dependent upon collaboration agreement under which genomic data was generated
-
-Requesting access: Submit a request for review via the Biobank Access Portal with a summary of your research objectives
-
-The Indiana Biobank Research Portal is available here: https://biobank.sca.iu.edu/ 
+If you are unsure which instance is right for your project, contact {{SUPPORT_EMAIL}}.

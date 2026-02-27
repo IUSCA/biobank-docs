@@ -1,40 +1,34 @@
 # Variant Xplorer
 
-The Variant Xplorer is a tool within the {{PLATFORM_FULL_NAME}} that allows researchers to investigate genetic variants and their distributions across the {{ORGANIZATION}} participant population.
+Variant Xplorer lets you search and filter genetic variants across the {{ORGANIZATION}} participant population.
 
 [{{WEBSITE_URL}}variantXplorer]({{WEBSITE_URL}}variantXplorer)
 
-## Overview
+## Two Ways to Use Variant Xplorer
 
-Variant Xplorer provides an interface for exploring genomic data, allowing you to:
+**Standalone** — open Variant Xplorer directly to start a new search from scratch. Use this when you have a specific variant, gene, or region in mind and want to explore what's present in the participant population.
 
-- Search for specific genetic variants by position, gene, or variant ID
-- Filter results using variant annotations and predicted functional impacts
-- Correlate variants with phenotypic data (Using [Cohort Builder](./cohort-builder.md))
+**From the Cohort Builder** — when building a Genotype Cohort, an embedded version of Variant Xplorer appears inline. Use it to define your variant criteria, then save the results as a cohort. You can also expand out to the full Variant Xplorer view from within the Cohort Builder.
 
-## Using Variant Xplorer
+## Searching for Variants
 
-### Searching for Variants
+Enter a query in any of these forms:
 
-You can search for variants using:
+- Genomic coordinates (e.g., `chr7:140453136`)
+- Gene symbol (e.g., `BRAF`)
+- rsID (e.g., `rs113488022`)
 
-- Genomic coordinates (e.g., chr7:140453136)
-- Gene symbols (e.g., BRAF)
-- rsIDs (e.g., rs113488022)
+## Filtering Results
 
+Narrow your results using:
 
-### Filtering Options
+- **Variant type** — SNV, indel, structural variant
+- **Allele frequency** — set thresholds to focus on rare or common variants
+- **Predicted impact** — high, moderate, or low functional impact
+- **Functional annotations** — consequence terms, conservation scores, pathogenicity predictions
 
-Variant Xplorer offers various filtering options to narrow down your search:
+## Building a Genotype Cohort from Results
 
-- Variant type (SNV, indel, structural variant)
-- Allele frequency thresholds
-- Predicted impact (high, moderate, low)
-- Conservation scores
-- Functional annotations
+Once you have a set of variants of interest, use the Cohort Builder to define a Genotype Cohort based on those criteria. Participants carrying those variants will be included in the cohort.
 
-## Integration with Cohort Builder
-
-Variant Xplorer is integrated with the [Cohort Builder](/guide/cohort-builder.md), allowing you to define cohorts based on specific genetic variants.
-
-This integration enables powerful genotype-phenotype analyses and facilitates the discovery of clinically relevant genetic associations.
+See [Cohort Builder — Building a Genotype Cohort](/guide/cohort-builder.md#building-a-genotype-cohort) for the full workflow.

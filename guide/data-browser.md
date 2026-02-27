@@ -1,32 +1,36 @@
 # Data Browser
 
-The Data Browser is useful for discovering and understanding the data resources available through the {{PLATFORM_NAME}} platform. It allows you to explore phenotypic data seeing popular matches. 
+The Data Browser lets you explore what clinical and genomic data is available before building a cohort. Use it to discover relevant diagnosis codes, lab tests, medications, or variants, then carry those terms into the Cohort Builder.
 
 [{{WEBSITE_URL}}data_browser]({{WEBSITE_URL}}data_browser)
 
-## Using the Data Browser
+## Browsing Available Data
 
-### Navigating Datasets
+The Data Browser is organized into categories:
 
-![Data Broswer - Overview](/public/images/screenshots/data-browser-overview.png)
+![Data Browser - Overview](/public/images/screenshots/data-browser-overview.png)
 
-The Data Browser organizes information into categories:
+**Clinical data categories:**
+- **Diagnoses** — ICD-coded conditions
+- **Labs** — laboratory test results
+- **Medications** — prescribed drugs
+- **Hospitalizations** — inpatient stay records
 
-- **Clinical Data**: Structured phenotype information and measurements
+**Genomic data:**
+- **Variants** — genetic variants called across the participant population, with annotation databases (e.g., gnomAD, ClinVar)
 
-- **Genomic Data**: Sequencing files, variant calls, and annotations
+Each category shows the number of distinct terms and the number of participants with data in that category.
 
-### Search Functionality
+Click any category to browse its contents.
 
-Once you've selected a category of data, use the keyword search to refine the results:
+## Searching Within a Category
 
-![Data Broswer - Search Diagnosis](/public/images/screenshots/data-browser-dx-search.png)
+Once you've selected a category, use the keyword search to find specific terms:
 
+![Data Browser - Search Diagnosis](/public/images/screenshots/data-browser-dx-search.png)
 
-### Data Exploration
+Results update as you type. This is useful for finding the exact code or terminology used in the dataset before you build a filter in the Cohort Builder.
 
-Once you've identified datasets of interest, you can jump over to the [cohort builder](/guide/cohort-builder.md) and use the same terms to define new filters. 
+## Moving to the Cohort Builder
 
-
-
-
+When you find terms you want to use as filters, take note of them and open the [Cohort Builder](/guide/cohort-builder.md). Use the same terms when adding filters — the Cohort Builder uses the same underlying terminology as the Data Browser.

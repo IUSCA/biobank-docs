@@ -1,26 +1,79 @@
 # API Client
 
-When retrieving data from the research portal from within the Trusted Research Environment, a CLI utility is available to make interactions with the API easier
+A CLI utility (`biobank-client`) is available inside the Trusted Research Environment for retrieving data from the research portal programmatically.
 
-Ensure that you have an access key configured within the TRE to make calls easier. If one doesn't exist already, create a `.env` file in your home directory with the following values:
+::: tip Using the client outside the TRE?
+If you want to run `biobank-client` in an automated pipeline or on your own machine, see the [API Client Container guide](api-client-container.md) instead.
+:::
 
-```
-export HOST=https://api.axin.sca.iu.edu
-export BASIC_AUTH=[key]
-```
+## Setting Up Credentials
 
-Keys can be generated via the Research Portal:
+Before using the client, you'll need an Access Key. Generate one from your profile page in the research portal:
 
 ![User Profile Page Screenshot](../public/images/screenshots/tre-access-key-via-profile.png)
 
 ![Access Key Creation Form](../public/images/screenshots/tre-access-key-via-profile-form.png)
 
-General command
-
+Once you have a key, create a `.env` file in your home directory inside the TRE:
 
 ```bash
-[Biobank API] $ biobank-client -h
+export HOST={{API_URL}}
+export BASIC_AUTH=apiKey:apiSecret
+```
 
+Source it before running the client:
+
+```bash
+source ~/.env
+```
+
+## Listing Files for a Cohort
+
+To see what data files are available for an approved cohort, run:
+
+```bash
+biobank-client getCohortFiles id=<cohort-id>
+```
+
+This returns a paginated list of files. Use `limit` and `offset` to page through large results:
+
+```bash
+biobank-client getCohortFiles id=<cohort-id> limit=50 offset=0
+```
+
+## Downloading a File
+
+To download a specific file by its ID:
+
+```bash
+curl -J -O -u apiKey:apiSecret -X GET "{{API_URL}}/cohorts/files/download/<file-id>"
+```
+
+The `-J` flag uses the server-supplied filename and `-O` saves it to the current directory.
+
+::: warning Raw genetic data requires TRE access
+Downloading raw genetic sequencing data is only permitted from within the Trusted Research Environment. This is one of the primary reasons the TRE is required for working with participant-level genomic data.
+:::
+
+::: tip On-demand staging
+Raw sequencing data is staged on-demand and may not be immediately available. If a download returns a `202` response, the file is being prepared — wait a moment and try again.
+:::
+
+## Direct API Access
+
+If you prefer to make API calls directly rather than use the CLI, the full API reference is available at:
+
+[{{WEBSITE_URL}}api/doc/]({{WEBSITE_URL}}api/doc/)
+
+## Command Reference
+
+Full list of available operations:
+
+```
+biobank-client -h
+```
+
+```
 Biobank API command line client (API version 1.0.0)
 
 Usage
@@ -64,87 +117,6 @@ Operations (grouped by tags)
 
 [general]
   health   (AUTH)
-
-Options
-  -h,--help				Print this help
-  -V,--version				Print API version
-  --about				Print the information about service
-  --host <url>				Specify the host URL
-              				(e.g. 'https://localhost')
-  --force				Force command invocation in spite of missing
-         				required parameters or wrong content type
-  --dry-run				Print out the cURL command without
-           				executing it
-  -nc,--no-colors			Enforce print without colors, otherwise autodetected
-  -ac,--accept <mime-type>		Set the 'Accept' header in the request
-  -ct,--content-type <mime-type>	Set the 'Content-type' header in
-                                	the request
-
-[Biobank API] $
 ```
 
-Get a list of files available for an authorized cohort:
-
-```bash
-[Biobank API] $ biobank-client getCohortFiles -h
-
-getCohortFiles - List data files for a cohort(AUTH -
-    BASIC)
-
-Requires read:cohorts scope
-
-Parameters
-  * id [string] (required) (default:
-    null) - The cohort id Specify as: id=value
-  * sort_by [string] (default: id) - Sort by a
-    field Specify as: sort_by=value
-  * sort_order [string] (default: asc) - Sort
-    order Specify as: sort_order=value
-  * limit [integer] (default: null) - Limit
-    the number of results Specify as: limit=value
-  * offset [integer] (default: null) - Offset
-    the results Specify as: offset=value
-
-Responses
-  200  The cohort files
-  400  Missing request parameters or invalid values
-  401  Authentication required
-  403  Access denied because of insufficient role or scope
-  500  An unexpected error occurred
-[Biobank API] $
-```
-
-Download data to the TRE
-
-```bash
-[Biobank API] $ biobank-client downloadCohortFile -h
-
-downloadCohortFile - Download a cohort file(AUTH -
-    BASIC)
-
-Requires read:cohorts scope.  <br/><br/>  To download the file and save it with
-the original name, use the following command:  <pre>curl -J -O -u
-{key}:{secret} -X GET "{base_url}/cohorts/files/download/{file_id}"</pre>
-
-Parameters
-  * file_id [string] (required) (default:
-    null) - The cohort file id Specify as: file_id=value
-
-Responses
-  200  Download file
-       Response headers
-       Content-Disposition - Indicates that the response should be
-        treated as a file download
-  202  File is being staged
-  400  Missing request parameters or invalid values
-  401  Authentication required
-  403  Access denied because of insufficient role or scope
-  500  An unexpected error occurred
-[Biobank API] $
-```
-
-## Direct API Calls
-
-Alternatively, you can access the API directly from within the TRE if that works better for your workflows. Documentation on the underlying calls is available here:
-
-[{{WEBSITE_URL}}api/doc/]({{WEBSITE_URL}}api/doc/)
+For detailed parameters on any operation, run `biobank-client <operation> -h`.

@@ -1,48 +1,39 @@
 # Getting Started with {{PLATFORM_FULL_NAME}}
 
-## Introduction
+## Logging In
 
-Welcome to the {{PLATFORM_FULL_NAME}}. This platform enables researchers to explore, build cohorts, and access clinical and genomic data collected from a diverse patient population across Indiana.
+1. Go to [{{WEBSITE_URL}}]({{WEBSITE_URL}})
+2. Click **Login** and select your institution's identity provider (e.g., Microsoft)
+3. Complete authentication through your institution's login page
 
-This guide will walk you through the account creation process, authentication, and the platform's core features to help you get started with effective data exploration and cohort management.
-
-
-## Authentication
-
-Before registering, log in with your institution's account
-
-### Logging In
-
-1. **Access the Portal**: Go to [{{WEBSITE_URL}}]({{WEBSITE_URL}})
-2. **Click "Login"**: Use the login button on the homepage
-3. **Enter Credentials**: Provide your institution's email and password
-4. **Two-Factor Authentication** (if enabled): Enter the verification code from your authenticator app or SMS
-
+If this is your first time logging in, you will be redirected to the registration form automatically after authenticating.
 
 ## Creating Your Account
 
-### Account Registration Process
-
-If you don't have an account with the platform, you'll be asked for some information to set up your account:
+After your first login, you'll be asked to complete a short registration form before you can access the platform:
 
 ![Microsoft OAuth Login](../public/images/screenshots/login-oauth-microsoft.png)
 
 ![Register Form Empty](../public/images/screenshots/register-empty-form.png)
 
-**Provide Required Information**:
-   - Full name
-   - Institutional email address
-   - Institution/organization affiliation
-   - Research area or department
-   - Brief description of your research interests
+Fill in:
+- Full name
+- Institution or organization
+- Department or research area
+- Brief description of your research interests
 
-Once you've completed the form, you'll be prompted to review the Terms and Conditions
+Once submitted, you'll be asked to review and accept the Terms and Conditions:
 
 ![Register Accept Terms](../public/images/screenshots/register-accept-terms.png)
 
+After accepting, your account will be created and you'll be taken to the platform.
 
-## Support and Contact Information
+## Next Steps
 
-For account-related issues:
-- **Email**: {{SUPPORT_EMAIL}}
+- **[Data Browser](/guide/data-browser.md)** — explore what clinical and genomic data is available
+- **[Cohort Builder](/guide/cohort-builder.md)** — build a cohort of participants matching your research criteria
+- **[Variant Xplorer](/guide/variant-explorer.md)** — investigate genetic variants across the participant population
 
+## Support
+
+For account-related issues, contact {{SUPPORT_EMAIL}}.

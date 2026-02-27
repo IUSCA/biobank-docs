@@ -16,6 +16,7 @@ export default withMermaid({
     __ORGANIZATION__: JSON.stringify(currentConfig.ORGANIZATION),
     __SUPPORT_EMAIL__: JSON.stringify(currentConfig.SUPPORT_EMAIL),
     __WEBSITE_URL__: JSON.stringify(currentConfig.WEBSITE_URL),
+    __API_URL__: JSON.stringify(currentConfig.API_URL),
     __GITHUB_URL__: JSON.stringify(currentConfig.GITHUB_URL),
     __COPYRIGHT_YEAR__: JSON.stringify(currentConfig.COPYRIGHT_YEAR)
   },
@@ -66,6 +67,8 @@ export default withMermaid({
             { text: "Data Browser", link: "/guide/data-browser" },
             { text: "Trusted Research Environment Setup", link: "/guide/trusted-research-environment-setup" },
             { text: "Trusted Research Environment Usage", link: "/guide/trusted-research-environment-usage" },
+            { text: "API Client", link: "/guide/api-client" },
+            { text: "API Client Container", link: "/guide/api-client-container" },
           ],
         },
       ],

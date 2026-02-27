@@ -1,80 +1,86 @@
 # Cohort Builder
 
-The Cohort Builder is a tool that allows you to create and manage groups of participants using a variety of filters and clinical/genomic criteria.
+The Cohort Builder lets you define groups of participants using clinical and genomic criteria, then request access to their data for analysis in the Trusted Research Environment.
 
 [{{WEBSITE_URL}}cohorts]({{WEBSITE_URL}}cohorts)
 
-## Building a Cohort
+## Cohort Types
 
-### Step-by-Step Guide
+**Phenotype Cohorts** are built from clinical data: diagnoses, medications, lab results, demographics, and hospitalizations.
 
-- Open the Cohort Builder
-- Choose "New Phenotype Cohort"
-- Select Filters (e.g., age range, diagnosis codes, genotype presence)
-- For boolean logic (AND/OR/NOT):
-   - Use the "Matching" drop-down to use "All" (equal to AND), "Any" (equal to OR), or "Excluding All" (equal to NOT)
+**Genotype Cohorts** are built from genetic variant data: specific variants, gene regions, or variant annotations.
+
+**Combination Cohorts** are built by combining two or more existing cohorts using set operations — useful when you want to intersect clinical and genomic criteria, or compare populations.
+
+## Building a Phenotype Cohort
+
+1. Open the Cohort Builder and choose **New Phenotype Cohort**
+2. Add filters — for example, an age range, a diagnosis code, or a lab value
+3. Set the matching logic for your filters:
+   - **All** (AND) — participant must match every filter
+   - **Any** (OR) — participant must match at least one filter
+   - **Excluding All** (NOT) — participant must match none of the filters
+
    ![Boolean logic screenshot](/public/images/screenshots/cohort-builder-or.jpg)
-- Preview results
-- Save and name your cohort
 
-### Combining Cohorts
+4. Review the participant count as you refine your criteria
+5. When satisfied, save and name your cohort
 
-Use combinational logic to intersect, union, or exclude cohort groups:
+## Building a Genotype Cohort
 
-- **Intersection (AND)**: Find participants who are in both cohort A AND cohort B
-- **Union (OR)**: Find participants who are in either cohort A OR cohort B
-- **Exclusion (NOT)**: Find participants who are in cohort A but NOT in cohort B
+1. Open the Cohort Builder and choose **New Genotype Cohort**
+2. Use the embedded Variant Xplorer to search for variants by gene, genomic coordinates, or rsID
+3. Apply filters (allele frequency, predicted impact, variant type, etc.) to narrow results
+4. Save and name your cohort
+
+## Combining Cohorts
+
+Use a Combination Cohort to apply set operations across two or more existing cohorts:
+
+- **Intersection (AND)** — participants in both cohort A and cohort B
+- **Union (OR)** — participants in cohort A or cohort B (or both)
+- **Exclusion (NOT)** — participants in cohort A but not cohort B
 
 ![Boolean logic screenshot](/public/images/screenshots/cohort-builder-or-alt.jpg)
 
 ![Boolean logic screenshot](/public/images/screenshots/cohort-builder-or-alt-modal.jpg)
 
+## Cohort Visibility and Sharing
 
-## Description Requirement
+When you save a cohort, you can control who can see and use it:
 
-When saving a cohort, you must provide a description. This is a required field that explains your cohort in plain, non-technical language that can be understood by researchers from different disciplines and stakeholders who may not be familiar with the specific clinical or technical terminology used in your filters. This description will be used as part of the governance process.
+- **Private** (default) — only you can access it
+- **Public** — visible to all users on the platform; others can submit an access request to use it
 
-While the system may auto-generate a description based on your selected criteria, these auto-generated descriptions can sometimes be inaccurate or incomplete. We strongly encourage you to:
+You can also share a cohort directly with specific users, giving them access without requiring a formal request.
 
-- Review the auto-generated description carefully
-- Edit and refine the description to ensure it accurately reflects your cohort
-- Use clear, accessible language that explains what population your cohort represents
-- Include relevant context about why this particular combination of criteria defines your target population
+## Writing a Good Description
 
-A well-written description helps other researchers understand and review your request.
+When saving a cohort, a description is required. This is used as part of the governance review process, so it should be written in plain language that researchers from different disciplines can understand — not just in terms of the filters you selected.
+
+The system may generate a description automatically, but auto-generated descriptions can be inaccurate or incomplete. Review it carefully and edit as needed to accurately describe the population your cohort represents and why this combination of criteria defines your target group.
 
 ## Requesting Data Access
 
-After creating a cohort in the {{PLATFORM_FULL_NAME}}, researchers have the option to save and lock the cohort. Locking a cohort preserves its exact composition at a specific point in time and ensures that no further modifications—such as adding or removing participants—can be made. If changes are needed later, the locked cohort must first be duplicated to create a new, editable version.
+Once you've finalized a cohort, you can request access to participant-level clinical and genomic data for analysis in the Trusted Research Environment.
 
-Once a cohort is locked, researchers may submit a formal request to access participant-level clinical, phenotype, and genomic data for that cohort. Once approved, access to these sensitive data will be granted within a trusted research environment, where analyses can be conducted in compliance with data governance and privacy protections.
+1. **Lock the cohort** — locking preserves its exact composition and prevents further changes. If you need to make changes later, duplicate the cohort first.
+2. **Submit a data access request** from the locked cohort
 
-![Request access step 1](/public/images/screenshots/cohort-builder-request-access-1.png)
-![Request access step 2](/public/images/screenshots/cohort-builder-request-access-2.png)
+   ![Request access step 1](/public/images/screenshots/cohort-builder-request-access-1.png)
+   ![Request access step 2](/public/images/screenshots/cohort-builder-request-access-2.png)
 
-### Tracking Request Progress
+3. Your request will be reviewed by the data governance committee
+4. Upon approval, you will receive credentials and instructions for accessing the Trusted Research Environment
 
-After submitting a data access request, you can monitor its status directly within the {{PLATFORM_FULL_NAME}}. The request tracker provides real-time updates on your application's progress through the review and approval process.
+### Tracking Your Request
 
-The tracker displays:
-- Current status of your request (e.g., Submitted, Under Review, Approved, Denied)
-- Review timeline and estimated completion dates
-- Any required actions or additional documentation needed
-- Communication history with the review committee
+After submitting, you can monitor your request's status from within the portal:
 
 ![tracking access requests](/public/images/screenshots/access-requests-tracking.png)
 
-#### Email Notifications
+Status values you may see: Submitted, Under Review, Approved, Denied. You'll also receive email notifications when the status changes.
 
-You will receive email notifications throughout the progress of your request, keeping you informed of status changes and important updates without needing to constantly check the portal. These automated notifications ensure you're promptly aware of any developments in your application.
+## Trusted Research Environment
 
-#### Data Access Agreement Process
-
-As part of the approval process, a representative from IHIE (Indiana Health Information Exchange) will reach out to you directly via email to execute a Data Access Agreement. This agreement establishes the legal framework and compliance requirements for accessing and using the requested biobank data. The IHIE representative will guide you through the agreement process and answer any questions about data use terms and conditions.
-
-This transparency allows researchers to stay informed about their request status and plan their research activities accordingly.
-
-## Trusted Research Environment Access
-
-Using a [trusted research environment](./trusted-research-environment-setup.md) is necessary when working with deidentified {{PLATFORM_FULL_NAME}} participant clinical data or raw genomic sequencing information. A trusted research environment provides a controlled environment that enforces strict data access, auditing, and computational restrictions, ensuring compliance with regulatory and ethical standards while minimizing the risk of unauthorized data exposure or misuse.
-
+Once your access request is approved, you'll work with your cohort's data inside a Trusted Research Environment. See [Trusted Research Environment Setup](/guide/trusted-research-environment-setup.md) for how to connect.
