@@ -2,8 +2,8 @@
 
 A CLI utility (`biobank-client`) is available inside the Trusted Research Environment for retrieving data from the research portal programmatically.
 
-::: tip Using the client outside the TRE?
-If you want to run `biobank-client` in an automated pipeline or on your own machine, see the [API Client Container guide](api-client-container.md) instead.
+::: tip Automated or pipeline use?
+If you want to run `biobank-client` in a scripted or pipeline workflow within the TRE, see the [API Client Container guide](api-client-container.md).
 :::
 
 ## Setting Up Credentials
