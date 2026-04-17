@@ -71,7 +71,7 @@ Once you've finalized a cohort, you can request access to participant-level clin
    ![Request access step 2](/public/images/screenshots/cohort-builder-request-access-2.png)
 
 3. Your request will be reviewed by the data governance committee
-4. Upon approval, you will receive credentials and instructions for accessing the Trusted Research Environment
+4. Upon approval, you can access the Trusted Research Environment using your institutional Microsoft account
 
 ### Tracking Your Request
 

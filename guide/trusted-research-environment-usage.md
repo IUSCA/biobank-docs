@@ -6,7 +6,7 @@ If you haven't already, please [request and connect to your environment](/guide/
 
 ## Desktop Environment
 
-Once connected, you will see a Linux desktop environment:
+Once connected, you will see a Linux desktop environment in your web browser:
 
 ![Empty Desktop Example](../public/images/screenshots/tre-desktop-empty.png)
 
