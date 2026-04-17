@@ -36,6 +36,18 @@ This documentation site provides comprehensive information about using the {{PLA
 
 The {{PLATFORM_FULL_NAME}} is a comprehensive platform that enables researchers to explore, build cohorts, and access multi-modal clinical and genomic data collected from a diverse patient population across Indiana. It serves as a bridge between researchers and the rich clinical and genomic data resources available through the Indiana Biobank.
 
+## Video Overview
+
+<iframe
+  width="560"
+  height="315"
+  src="https://www.youtube.com/embed/y3iiFEawM8Y?si=_fR42h6UDEvdwBT-"
+  title="YouTube video player"
+  frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen
+></iframe>
+
 ## User Guide
 
 <!--@include: ./guide/index.md-->
