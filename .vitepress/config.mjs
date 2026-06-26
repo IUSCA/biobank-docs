@@ -18,7 +18,11 @@ export default withMermaid({
     __WEBSITE_URL__: JSON.stringify(currentConfig.WEBSITE_URL),
     __API_URL__: JSON.stringify(currentConfig.API_URL),
     __GITHUB_URL__: JSON.stringify(currentConfig.GITHUB_URL),
-    __COPYRIGHT_YEAR__: JSON.stringify(currentConfig.COPYRIGHT_YEAR)
+    __COPYRIGHT_YEAR__: JSON.stringify(currentConfig.COPYRIGHT_YEAR),
+    __VIDEO_EMBED_HTML__: JSON.stringify(currentConfig.VIDEO_EMBED_HTML),
+    __PHENOTYPE_REFERENCE_PATH__: JSON.stringify(currentConfig.PHENOTYPE_REFERENCE_PATH),
+    __PHENOTYPE_REFERENCE_LINK__: JSON.stringify(currentConfig.PHENOTYPE_REFERENCE_LINK),
+    __PHENOTYPE_REFERENCE_TITLE__: JSON.stringify(currentConfig.PHENOTYPE_REFERENCE_TITLE)
   },
 
   // Configure markdown plugins
@@ -65,6 +69,7 @@ export default withMermaid({
             { text: "Cohort Builder", link: "/guide/cohort-builder" },
             { text: "Variant Xplorer", link: "/guide/variant-explorer" },
             { text: "Data Browser", link: "/guide/data-browser" },
+            { text: currentConfig.PHENOTYPE_REFERENCE_TITLE, link: currentConfig.PHENOTYPE_REFERENCE_LINK },
             { text: "Trusted Research Environment Setup", link: "/guide/trusted-research-environment-setup" },
             { text: "Trusted Research Environment Usage", link: "/guide/trusted-research-environment-usage" },
             { text: "API Client", link: "/guide/api-client" },

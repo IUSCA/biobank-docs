@@ -2,6 +2,8 @@
 
 The Data Browser lets you explore what clinical and genomic data is available before building a cohort. Use it to discover relevant diagnosis codes, lab tests, medications, or variants, then carry those terms into the Cohort Builder.
 
+If you need a fuller inventory of phenotype domains represented in {{PLATFORM_NAME}}, including domains that are not all exposed as top-level Data Browser cards, see the [{{PHENOTYPE_REFERENCE_TITLE}}]({{PHENOTYPE_REFERENCE_PATH}}).
+
 [{{WEBSITE_URL}}data_browser]({{WEBSITE_URL}}data_browser)
 
 ## Browsing Available Data
