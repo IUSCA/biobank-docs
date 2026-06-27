@@ -5,11 +5,11 @@ This page summarizes the phenotype data domains currently available in the India
 For vocabulary reference:
 
 - **Labs are LOINC-based**
-- **Diagnoses use ICD-based vocabulary mapping in the current Indiana Biobank configuration**
+- **Diagnoses use ICD-based vocabulary mapping**
 
 ## At a Glance
 
-The Indiana Biobank repository currently supports these phenotype domains:
+The platform currently supports these phenotype domains:
 
 - Demographics and biometrics
 - Laboratory results
@@ -82,8 +82,8 @@ Encounter-linked diagnoses coded across multiple vocabularies.
 - Diagnosis date
 
 **Notes**
-- The current Indiana Biobank UI configuration uses **ICD-based** diagnosis vocabulary mapping.
-- Diagnosis codes can come from ICD-9, ICD-10, and SNOMED-linked terminology workflows in the portal.
+- The current configuration uses **ICD-based** diagnosis vocabulary mapping.
+- Diagnosis codes can come from ICD-9, ICD-10, and SNOMED-linked terminology in the portal.
 
 ### Medications
 
@@ -192,22 +192,3 @@ Routine immunization history stored separately from COVID vaccination records.
 - Series dose count
 - Additional description fields
 
-## How These Data Reach the Portal
-
-The phenotype ingestion pipeline currently loads source files for the following phenotype feeds:
-
-- Demographics
-- Diagnoses
-- Hospitalizations
-- Labs
-- Medications
-- Weight
-- Height
-- COVID tests
-- COVID vaccinations
-- Drug screenings
-- Non-COVID vaccinations
-
-Some user-facing fields are derived from these raw feeds. For example:
-
-- BMI is calculated from height and weight measurements.
