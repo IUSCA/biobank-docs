@@ -20,6 +20,7 @@ export default withMermaid({
     __GITHUB_URL__: JSON.stringify(currentConfig.GITHUB_URL),
     __COPYRIGHT_YEAR__: JSON.stringify(currentConfig.COPYRIGHT_YEAR),
     __VIDEO_EMBED_HTML__: JSON.stringify(currentConfig.VIDEO_EMBED_HTML),
+    __COHORT_BUILDER_VIDEO_EMBED_HTML__: JSON.stringify(currentConfig.COHORT_BUILDER_VIDEO_EMBED_HTML),
     __PHENOTYPE_REFERENCE_PATH__: JSON.stringify(currentConfig.PHENOTYPE_REFERENCE_PATH),
     __PHENOTYPE_REFERENCE_LINK__: JSON.stringify(currentConfig.PHENOTYPE_REFERENCE_LINK),
     __PHENOTYPE_REFERENCE_TITLE__: JSON.stringify(currentConfig.PHENOTYPE_REFERENCE_TITLE)

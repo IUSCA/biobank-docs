@@ -5,11 +5,11 @@ This page summarizes the phenotype data domains currently represented in the **A
 For vocabulary reference:
 
 - **Labs are LOINC-based**
-- **Diagnoses use SNOMED-based vocabulary mapping in the current AnalytiXIN configuration**
+- **Diagnoses use SNOMED-based vocabulary mapping**
 
 ## At a Glance
 
-The AnalytiXIN repository currently supports these actively used phenotype domains:
+The platform currently supports these actively used phenotype domains:
 
 - Demographics and biometrics
 - Laboratory results
@@ -58,7 +58,7 @@ Laboratory tests indexed by LOINC and stored with numeric and coded result forms
 - Unit
 
 **Notes**
-- In the current AnalytiXIN loader, the user-facing lab name is normalized from `loinc_name`.
+- User-facing lab name is normalized from `loinc_name`.
 - Lab extraction and lab search are built around **LOINC** codes, not SNOMED.
 - The cohort builder uses a lab-specific query flow rather than exposing every lab column directly as a flat set of filters.
 
@@ -77,8 +77,8 @@ Encounter-linked diagnoses coded across clinical vocabularies.
 - Diagnosis date
 
 **Notes**
-- The current AnalytiXIN UI configuration uses **SNOMED-based** diagnosis vocabulary mapping.
-- The diagnosis workflow supports coded diagnosis lookup rather than free-text-only filtering.
+- The platform configuration uses **SNOMED-based** diagnosis vocabulary mapping.
+- The diagnosis workflow supports coded diagnosis lookup.
 
 ### Medications
 

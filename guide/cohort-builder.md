@@ -4,6 +4,8 @@ The Cohort Builder lets you define groups of participants using clinical and gen
 
 [{{WEBSITE_URL}}cohorts]({{WEBSITE_URL}}cohorts)
 
+{{COHORT_BUILDER_VIDEO_EMBED_HTML}}
+
 ## Cohort Types
 
 **Phenotype Cohorts** are built from clinical data: diagnoses, medications, lab results, demographics, and hospitalizations.
