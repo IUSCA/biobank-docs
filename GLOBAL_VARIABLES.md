@@ -130,7 +130,7 @@ Before:
 ```markdown
 # Welcome to AnalytiXIN
 
-Contact us at support@analytixin.org for help.
+Contact us at support@analytixindiana.com for help.
 ```
 
 After (using double curly braces - recommended):
