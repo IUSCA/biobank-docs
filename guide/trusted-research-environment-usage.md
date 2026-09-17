@@ -27,10 +27,21 @@ Shared data will be available in designated directories (typically `/data/common
 - Clinical data is typically in structured formats (CSV, TSV, or database files)
 - Genomic data may be in standard formats (VCF, BAM, FASTQ, etc.)
 
+**Genome Build:** Genotype data delivered through the platform is aligned to **GRCh38**. If you're staging your own reference data (e.g. an imputation reference panel) or comparing against externally-published resources, make sure the build matches — GRCh37/hg19-based reference files are not compatible without a liftover step.
+
 Please configure your scripts to write any outputs to `/data/output`
 
 
 In order to conserve cloud resources, raw sequencing data is made available 'on-demand' by default. For downloading raw data within the TRE, please refer to the [API client guide](api-client.md)
+
+## Network Access
+
+TRE workspaces have **no outbound internet access** by design — this is a data governance requirement, not a configuration gap. In practice this means:
+
+- Any workflow step that expects to reach an external service at runtime (an imputation server such as Michigan or TOPMed, a package installer that fetches from the internet, a reference database download) will not work from inside the workspace.
+- Equivalent local tools and pre-staged reference data are the supported alternative — for example, local phasing/imputation against a reference panel staged into your workspace, rather than uploading to an external imputation service. See the Genomic Analysis Tools list below for what's available today.
+- If your analysis plan depends on a specific external service, tell us before you start — there may be a local equivalent, or it may need a separate discussion about whether/how it fits the no-egress requirement.
+- If you need software or reference data that isn't listed below, contact the TRE team — new tools are added to the workspace image on request; there's currently no self-service form, so just reach out directly.
 
 ## Running Analysis
 
@@ -51,40 +62,32 @@ The Trusted Research Environment comes with a suite of pre-installed tools for v
 - **Jupyter Notebooks**: An interactive computing environment that allows you to create and share documents containing live code, equations, visualizations, and narrative text.
 
 #### Genomic Analysis Tools
-- **PLINK 1.9**: A whole-genome association analysis toolset.
-- **PLINK 2.0**: A next-generation whole-genome association analysis toolset, offering improved performance and new features.
+- **PLINK 1.9** and **PLINK 2.0**: Whole-genome association analysis toolsets.
+- **GCTA**: GRM computation, GREML heritability estimation, and COJO conditional/joint association analysis.
+- **REGENIE**: Whole-genome regression for biobank-scale GWAS; preferred over PLINK mixed models at larger cohort sizes.
+- **SAIGE** and **PRSice-2**: Mixed-model association for case-control imbalance, and polygenic risk score computation, respectively. These install best-effort during our build process — if either seems to be missing from your workspace, let us know rather than assuming it should be there.
+- **Nextflow** + **pgsc_calc**: Pipeline runner and the pgscatalog polygenic-score/ancestry pipeline, pre-cached for offline use (no internet access needed to run it).
 - **IGV (Integrative Genomics Viewer)**: A high-performance visualization tool for genomic data.
-- **BCFtools**: A set of utilities for variant calling and manipulating VCF and BCF files.
-- **VCFTools**: A program package designed to work with VCF files, including filtering, merging, and comparing.
-- **BEDTools**: A versatile toolset for genomic feature manipulation.
-- **GATK (Genome Analysis Toolkit)**: A comprehensive toolkit for variant discovery in high-throughput sequencing data, including tools for Somatic Variant (SV), Copy Number Variant (CNV), and Pathogen Sequencing (Pathseq) analysis.
-- **HLA Caller**: Tools for Human Leukocyte Antigen (HLA) typing (e.g., xHLA, HiBAG).
-- **samtools**: Utilities for interacting with and post-processing sequence alignments in SAM, BAM, and CRAM formats.
-- **tabix**: A generic indexer for TAB-delimited genome position files.
-- **htslib**: A C library for reading/writing high-throughput sequencing data formats.
-- **minconda**: A free minimal installer for conda.
-- **annovar**: A tool for annotating genetic variants.
+- **GATK (Genome Analysis Toolkit)**: A comprehensive toolkit for variant discovery in high-throughput sequencing data.
+- **samtools**, **bcftools**, **tabix**, **vcftools**, **bedtools**: Standard utilities for VCF/BAM/BED manipulation.
+- **HIBAG**: HLA imputation (R package, see below).
+- **Miniconda** + **JupyterLab**: System-wide conda environment with common Python scientific/bioinformatics libraries (`numpy`, `pandas`, `scipy`, `scikit-learn`, `biopython`, `pysam`, `cyvcf2`) and a JupyterLab notebook server (with an R kernel via IRkernel).
+- **biobank-client** / `tre-biobank`: CLI wrapper for on-demand access to raw sequencing data from the Indiana Biobank API (see the [API client guide](api-client.md)).
+- **ANNOVAR**: Variant annotation tool. Its license requires individual registration at openbioinformatics.org, so the licensed download isn't pre-loaded — contact the TRE team if you need it staged for your workspace.
 - **METAL**: A tool for meta-analysis of genome-wide association scans.
+
+We're actively expanding this list based on researcher requests — **IMPUTE2**, **SHAPEIT4**, and **EIGENSTRAT** are in progress as of late 2026 to support local imputation and PCA workflows, and will be added to this list once they land in a production workspace image. See the Network Access note above for how local imputation works without external servers like TOPMed or Michigan. If a tool you need isn't listed here, ask — it's usually a matter of adding it to the next workspace image build, not a hard blocker.
 
 ## R Packages
 
-The R environment includes a comprehensive set of packages for statistical analysis and bioinformatics:
+The R environment includes a comprehensive set of packages for statistical analysis and bioinformatics, including but not limited to:
 
-- `data.table`: Extension of `data.frame` for faster data manipulation.
-- `DESeq2`: Differential gene expression analysis based on the negative binomial distribution.
-- `GWASTOOLS`: Tools for quality control and analysis of genome-wide association studies.
-- `biomaRt`: R interface to BioMart online biological data resources.
-- `gtools`: Various R programming tools.
-- `dplyr`: A grammar of data manipulation, providing a consistent set of verbs that help you solve the most common data manipulation challenges.
-- `ggplot2`: A system for declaratively creating graphics, based on The Grammar of Graphics.
-- `SKAT`: Sequence Kernel Association Test for genetic association studies.
-- `robustSKAT`: Robust Sequence Kernel Association Test.
-- `HIBAG`: HLA Imputation Based on Allele Gene.
-- `stringr`: A consistent, simple, and easy-to-use set of wrappers for common string operations.
-- `foreach`: Provides a mechanism for iterating over elements in a collection, without the need for explicit loop counters.
-- `SNPRelate`: Parallel computing toolset for genome-wide association studies.
-- `readxl`: Read Excel files into R.
-- `tidyverse`: An opinionated collection of R packages designed for data science.
-- `ggpubr`: `ggplot2` based publication ready plots.
-- `survplot`: Tools for plotting survival data.
-- All their respective dependencies.
+- `data.table`, `dplyr`, `tidyverse`, `ggplot2`, `ggrepel`, `DT`: General data manipulation and visualization.
+- `survival`, `survminer`, `lme4`, `lmerTest`, `glmnet`, `logistf`, `lmtest`: Statistical modeling.
+- `tableone`, `gtsummary`, `meta`: Summary tables and meta-analysis.
+- `DESeq2`, `biomaRt`, `SNPRelate`, `GWASTools`, `SKAT`, `HIBAG` (Bioconductor): Genomics-focused analysis.
+- `bigsnpr` (includes LDpred2) and `METAL`: Polygenic scoring and GWAS meta-analysis.
+- `PheWAS`: Phenome-wide association scanning (installed from a pinned GitHub release rather than CRAN).
+- `qqman`: QQ and Manhattan plots.
+
+Note: `robustSKAT` is **not currently installed** — it isn't available for our current Bioconductor/R version combination. If your analysis depends on it, let us know so we can evaluate alternatives or track when it becomes available again.
