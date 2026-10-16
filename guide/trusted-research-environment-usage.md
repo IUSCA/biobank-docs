@@ -32,6 +32,8 @@ Shared data will be available in designated directories (typically `/data/common
 Please configure your scripts to write any outputs to `/data/output`
 
 
+{{TRE_PORTAL_ACCESS_NOTE}}
+
 In order to conserve cloud resources, raw sequencing data is made available 'on-demand' by default. For downloading raw data within the TRE, please refer to the [API client guide](api-client.md)
 
 ## Network Access

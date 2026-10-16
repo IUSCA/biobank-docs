@@ -6,6 +6,8 @@ The {{PLATFORM_NAME}} API is a RESTful API that provides access to the platform'
 
 ## Trusted Research Environment Access
 
+{{TRE_PORTAL_ACCESS_NOTE}}
+
 API endpoints are only accessible from within the Trusted Research Environment. These endpoints provide access to sensitive participant-level data.
 
 For detailed usage, see the [API Client Guide](/guide/api-client.md).

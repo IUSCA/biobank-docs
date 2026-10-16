@@ -6,6 +6,8 @@ A CLI utility (`biobank-client`) is available inside the Trusted Research Enviro
 If you want to run `biobank-client` in a scripted or pipeline workflow within the TRE, see the [API Client Container guide](api-client-container.md).
 :::
 
+{{TRE_PORTAL_ACCESS_NOTE}}
+
 ## Setting Up Credentials
 
 Before using the client, you'll need an Access Key. Generate one from your profile page in the research portal:
