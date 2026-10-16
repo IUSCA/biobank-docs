@@ -13,6 +13,7 @@ The following global variables are available throughout the documentation:
 - `WEBSITE_URL` - Main website URL
 - `GITHUB_URL` - GitHub repository URL
 - `COPYRIGHT_YEAR` - Copyright year
+- `TRE_PORTAL_ACCESS_NOTE` - A Markdown callout shown on the TRE and API client pages when an instance's API cannot be reached from TRE workspaces; empty for the others
 
 ## Usage Methods
 
@@ -65,7 +66,12 @@ DOCS_INSTANCE=biobank npm run docs:build
 
 # Development server for Indiana Biobank
 DOCS_INSTANCE=biobank npm run docs:dev
+
+# Build for the Provena Consortium (built into the Provena web image)
+DOCS_INSTANCE=provena npm run docs:build
 ```
+
+An unknown `DOCS_INSTANCE` stops the build with an error naming it.
 
 ### Method 2: Direct Configuration Edit
 
@@ -83,7 +89,7 @@ const INSTANCE_CONFIG = {
 
 To add new global variables:
 
-1. Add the variable to both instance configurations in `.vitepress/config.js`:
+1. Add the variable to every instance configuration in `.vitepress/config.js`:
 
 ```javascript
 analytixin: {
