@@ -43,7 +43,7 @@ export const INSTANCE_CONFIG = {
         PLATFORM_NAME: 'Provena Consortium',
         PLATFORM_FULL_NAME: 'Provena Consortium Research Portal',
         ORGANIZATION: 'Provena Consortium',
-        SUPPORT_EMAIL: 'support@analytixindiana.com',
+        SUPPORT_EMAIL: 'support@provenaconsortium.org',
         WEBSITE_URL: 'https://research.provenaconsortium.org/',
         API_URL: 'https://research.provenaconsortium.org/api',
         GITHUB_URL: 'https://github.com/iusca/biobank-docs',
@@ -56,7 +56,7 @@ export const INSTANCE_CONFIG = {
         TRE_PORTAL_ACCESS_NOTE: [
             '::: warning Not yet reachable from TRE workspaces',
             'TRE workspaces cannot reach the Provena Consortium Research Portal API yet, so `biobank-client` and the file downloads described in the API Client guide do not work from them.',
-            'Contact support@analytixindiana.com to have the data for an approved cohort staged into your workspace.',
+            'Contact support@provenaconsortium.org to have the data for an approved cohort staged into your workspace.',
             ':::'
         ].join('\n')
     }
