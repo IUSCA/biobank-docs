@@ -38,7 +38,7 @@ export const INSTANCE_CONFIG = {
         TRE_PORTAL_ACCESS_NOTE: ''
     },
 
-    // Provena carries the AnalytiXIN datasets, so it shares their phenotype reference.
+    // Provena runs the release-aware Cohort Builder, so it has its own phenotype reference.
     provena: {
         PLATFORM_NAME: 'Provena Consortium',
         PLATFORM_FULL_NAME: 'Provena Consortium Research Portal',
@@ -50,8 +50,8 @@ export const INSTANCE_CONFIG = {
         COPYRIGHT_YEAR: new Date().getFullYear().toString(),
         VIDEO_EMBED_HTML: '',
         COHORT_BUILDER_VIDEO_EMBED_HTML: '',
-        PHENOTYPE_REFERENCE_PATH: '/guide/phenotype-data-reference-axin.md',
-        PHENOTYPE_REFERENCE_LINK: '/guide/phenotype-data-reference-axin',
+        PHENOTYPE_REFERENCE_PATH: '/guide/phenotype-data-reference-provena.md',
+        PHENOTYPE_REFERENCE_LINK: '/guide/phenotype-data-reference-provena',
         PHENOTYPE_REFERENCE_TITLE: 'Phenotype Data Reference',
         TRE_PORTAL_ACCESS_NOTE: [
             '::: warning Not yet reachable from TRE workspaces',
