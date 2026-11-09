@@ -1,11 +1,19 @@
 import { globalVarsPlugin } from './plugins/globalVars.js'
-import { getCurrentConfig } from './config/instances.js'
+import { getCurrentConfig, INSTANCE_CONFIG } from './config/instances.js'
 import { withMermaid } from "vitepress-plugin-mermaid";
 
 const currentConfig = getCurrentConfig();
 
+// Each instance publishes only its own phenotype reference, so a page describing another
+// instance's data is never reachable on this one.
+const otherPhenotypeReferences = Object.values(INSTANCE_CONFIG)
+  .filter((config) => config && typeof config === 'object' && config.PHENOTYPE_REFERENCE_PATH)
+  .map((config) => config.PHENOTYPE_REFERENCE_PATH.replace(/^\//, ''))
+  .filter((path) => path !== currentConfig.PHENOTYPE_REFERENCE_PATH.replace(/^\//, ''));
+
 export default withMermaid({
   base: '/docs/',
+  srcExclude: otherPhenotypeReferences,
   title: `${currentConfig.PLATFORM_NAME} Documentation`,
   description: `User documentation for the ${currentConfig.PLATFORM_FULL_NAME}`,
 
