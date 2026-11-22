@@ -1,14 +1,14 @@
 # Global Variables Documentation
 
-This VitePress documentation supports global variables that allow you to maintain a single set of documentation for both Indiana Biobank and AnalytiXIN instances.
+This VitePress documentation supports global variables that allow you to maintain a single set of documentation for both the Indiana Biobank and Provena instances. Provena is the portal formerly called AnalytiXIN.
 
 ## Available Variables
 
 The following global variables are available throughout the documentation:
 
-- `PLATFORM_NAME` - Short platform name (e.g., "AnalytiXIN" or "Indiana Biobank")
-- `PLATFORM_FULL_NAME` - Full platform name (e.g., "AnalytiXIN Clinical Genomic Portal")
-- `ORGANIZATION` - Organization name (e.g., "AnalytiXIN Team")
+- `PLATFORM_NAME` - Short platform name (e.g., "Provena Consortium" or "Indiana Biobank")
+- `PLATFORM_FULL_NAME` - Full platform name (e.g., "Provena Consortium Research Portal")
+- `ORGANIZATION` - Organization name (e.g., "Provena Consortium")
 - `SUPPORT_EMAIL` - Support email address
 - `WEBSITE_URL` - Main website URL
 - `GITHUB_URL` - GitHub repository URL
@@ -58,7 +58,7 @@ const supportEmail = __SUPPORT_EMAIL__
 Set the `DOCS_INSTANCE` environment variable when building:
 
 ```bash
-# Build for AnalytiXIN (default)
+# Build for the Provena Consortium (default; the Provena web image passes DOCS_INSTANCE=provena)
 npm run docs:build
 
 # Build for Indiana Biobank
@@ -66,9 +66,6 @@ DOCS_INSTANCE=biobank npm run docs:build
 
 # Development server for Indiana Biobank
 DOCS_INSTANCE=biobank npm run docs:dev
-
-# Build for the Provena Consortium (built into the Provena web image)
-DOCS_INSTANCE=provena npm run docs:build
 ```
 
 An unknown `DOCS_INSTANCE` stops the build with an error naming it.
@@ -80,7 +77,7 @@ Edit `.vitepress/config.js` and change the `CURRENT_INSTANCE` value:
 ```javascript
 const INSTANCE_CONFIG = {
   // Change this line:
-  CURRENT_INSTANCE: 'biobank', // or 'analytixin'
+  CURRENT_INSTANCE: 'biobank', // or 'provena'
   // ...
 }
 ```
@@ -92,9 +89,9 @@ To add new global variables:
 1. Add the variable to every instance configuration in `.vitepress/config.js`:
 
 ```javascript
-analytixin: {
-  PLATFORM_NAME: 'AnalytiXIN',
-  NEW_VARIABLE: 'new value for AnalytiXIN',
+provena: {
+  PLATFORM_NAME: 'Provena Consortium',
+  NEW_VARIABLE: 'new value for Provena',
   // ...
 },
 biobank: {
@@ -134,9 +131,9 @@ const globalVars = {
 
 Before:
 ```markdown
-# Welcome to AnalytiXIN
+# Welcome to Provena Consortium
 
-Contact us at support@analytixindiana.com for help.
+Contact us at support@provenaconsortium.org for help.
 ```
 
 After (using double curly braces - recommended):
