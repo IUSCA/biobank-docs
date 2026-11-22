@@ -1,47 +1,55 @@
-# Trusted Research Environment Access
+# Workspaces
 
-## What is a Trusted Research Environment?
+A workspace is your own computer in the trusted research environment. The trusted research environment is a controlled computing environment where you work with participant-level data. It limits network access, audits what happens, and reviews everything that leaves it. This protects participants from re-identification and prevents data from being copied out.
 
-A trusted research environment is a controlled computing environment that enforces strict data access, auditing, and computational restrictions. They are similar to a secure enclave. It ensures compliance with regulatory and ethical standards while minimizing the risk of unauthorized data exposure or misuse.
+## How you get a workspace
 
-## Why is it Necessary?
+1. Build a cohort in the [Cohort Builder](/guide/cohort-builder.md).
+2. Request access to its data. See [Request access to a cohort's data](/guide/cohort-builder.md#request-access-to-a-cohort-s-data).
+3. The request is reviewed. Track it under **Access Requests** in the sidebar.
+4. When the request is approved, its workspace appears under **Workspaces** in the sidebar.
 
-Using a trusted research environment is necessary when working with deidentified {{ORGANIZATION}} participant data to prevent unauthorized data exfiltration and re-identification of participants. 
+## The Workspaces page
 
+**Workspaces**, in the sidebar, lists a workspace for each approved access request. If you have none, the page says so. Open a workspace to see its cohort, its participant count, the date it was approved, and its collaborators.
 
-## Request Process
+The workspace page may show one of these notices first:
 
-1. [Create a cohort](cohort-builder.md#building-a-cohort)
-2. [Submit a formal request to access participant-level clinical, phenotype, and genomic data for your locked cohort](cohort-builder.md#requesting-data-access)
-3. Your request will be reviewed by the data governance committee
-4. Upon approval, you can access the trusted research environment using your institutional Microsoft account
-5. You can then conduct analyses within the enclave environment in compliance with data governance and privacy protections
+- **Workspace Being Provisioned**: the workspace is still being set up. Check back shortly.
+- **Agreement Required**: you must accept the Data Transfer & Use Agreement on the page before you can use the workspace. Read it and press **Accept Agreement**.
+- **Workspace Archived**: the workspace is no longer active and cannot be used.
 
-## Accessing the Trusted Research Environment
+## Start, open, and stop a workspace
 
-### System Overview
+- Press **Start** to turn the workspace on. It shows **Starting…** while it starts.
+- When it is running, press **Open Workspace**. A desktop opens in your browser. Sign in on the workspace sign-in page if asked.
+- Press **Stop** when you finish, to save resources.
 
-The trusted research environment is a virtual machine deployed in AWS with limited networking access for security purposes. Access is provided through a web-based remote desktop client that runs in your browser.
+Right after starting, the page may say the workspace is initializing and **Open Workspace** will be available shortly. **Cost Summary** shows what the workspace has cost so far.
 
-### Authentication
+For what is inside a workspace, see [Using a Workspace](/guide/trusted-research-environment-usage.md).
 
-Your approved project is linked to your institutional Microsoft account. To access the TRE:
+## Bring files into a workspace
 
-1. Navigate to the trusted research environment access URL provided in your approval notification
-2. Sign in with your institutional Microsoft credentials (e.g., `username@iu.edu`)
+Use **Load data into workspace** on the workspace page.
 
-![Guacamole Login Example](../public/images/screenshots/tre-thin-linc.png)
+1. Under **New Upload**, choose one archive file: .zip, .tar, .tar.gz, or .tgz.
+2. Say what the data is for under **What is this data for?**.
+3. Press **Submit for safety review**.
 
-For details on how to use the Trusted Research Environment, please refer to the [Trusted Research Environment Usage](/guide/trusted-research-environment-usage.md) document.
+Files are scanned, and a person reviews them. The page says this typically takes 1 to 2 business days. Approved files appear in `/data/input` in your workspace. **Upload history** shows each upload's status.
 
+## Export results from a workspace
 
-## Data Export Policies
+Raw participant-level data cannot leave the trusted research environment. You can export results such as aggregated tables, figures, summaries, and code. Use **Export results from workspace** on the workspace page.
 
-While raw data cannot be exported from the trusted research environment, researchers can export:
+1. Under **New export request**, choose the files to export. Only files in `/data/work` can be exported.
+2. Say why under **Why are you exporting this?**.
+3. Tick both statements. They confirm that the files hold no identifiable information and that you will use them only as the terms allow.
+4. Press **Send for export review**.
 
-- Analysis results
-- Statistical summaries
-- Visualizations
-- Code and analysis workflows
+A snapshot of the files is taken when you submit, so later edits do not change the request. A reviewer checks it before anything leaves. **Export history** shows each request's status. An approved export is available as a download link for 7 days.
 
-All exports are subject to review to ensure they do not contain identifiable information. Once you've completed your analysis, contact the data stewards by emailing  {{SUPPORT_EMAIL}} for inquiries about extracting results data from the secure enclave.
+## Help
+
+For problems with a workspace, email {{SUPPORT_EMAIL}}.
