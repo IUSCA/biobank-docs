@@ -1,39 +1,56 @@
 # Getting Started with {{PLATFORM_FULL_NAME}}
 
-## Logging In
+## Sign in
 
-1. Go to [{{WEBSITE_URL}}]({{WEBSITE_URL}})
-2. Click **Login** and select your institution's identity provider (e.g., Microsoft)
-3. Complete authentication through your institution's login page
+1. Go to [{{WEBSITE_URL}}]({{WEBSITE_URL}}).
+2. The sign-in page is headed **Sign Up or Log In**. It shows a button for each sign-in method this portal accepts, such as **Indiana University**, **Continue with Google**, or **Continue with Microsoft**.
+3. Choose your method and sign in on your institution's or provider's page.
 
-If this is your first time logging in, you will be redirected to the registration form automatically after authenticating.
+The first time you sign in, the portal asks you to create an account. After that, signing in takes you to **Browse Data**.
 
-## Creating Your Account
+### If sign-in is refused
 
-After your first login, you'll be asked to complete a short registration form before you can access the platform:
+- "It appears that you do not currently have permission to access this application" means your account is not allowed on this portal.
+- "It appears that your organization does not currently have permission to access this application" means your organization is not allowed on this portal.
+- "Your account did not provide an email address verified by its domain's owner" means the portal cannot trust the address. Try another sign-in method.
 
-![Microsoft OAuth Login](../public/images/screenshots/login-oauth-microsoft.png)
+Each message has **Go Back**. To ask for access, email {{SUPPORT_EMAIL}}.
 
-![Register Form Empty](../public/images/screenshots/register-empty-form.png)
+## Create your account
 
-Fill in:
-- Full name
-- Institution or organization
-- Department or research area
-- Brief description of your research interests
+The account form has two steps.
 
-Once submitted, you'll be asked to review and accept the Terms and Conditions:
+1. Check your details. **Email** comes from your sign-in and cannot be changed. Fill in **Full Name**, **Username**, **Institution Name**, and **Institution Type**, then press **Next**.
+2. Read the terms of use. The **I Agree to the Terms of Use** box can be ticked once you have scrolled to the end. Tick it and press **Create Account**.
 
-![Register Accept Terms](../public/images/screenshots/register-accept-terms.png)
+A username has 3 to 30 characters: letters, numbers, and single hyphens.
 
-After accepting, your account will be created and you'll be taken to the platform.
+## When the terms of use change
 
-## Next Steps
+When updated terms are coming, a banner says when they take effect, with **Review and accept**. Once they take effect, the portal asks you to accept them before you continue. Press **Accept**, or **Log out** to leave.
 
-- **[Data Browser](/guide/data-browser.md)** — explore what clinical and genomic data is available
-- **[Cohort Builder](/guide/cohort-builder.md)** — build a cohort of participants matching your research criteria
-- **[Variant Xplorer](/guide/variant-explorer.md)** — investigate genetic variants across the participant population
+## Your profile
+
+**Profile**, in the sidebar, shows your username, name, email, roles, and the version of the terms you accepted. Only the portal's administrators can change your username, name, or roles. Use **Contact us** on the profile page to ask.
+
+### Access keys
+
+An access key lets a script use the portal's API in place of your sign-in. You need one for the [API Client](/guide/api-client.md).
+
+1. On **Profile**, under **Personal Access Keys**, press **Generate new access key**, or **Generate new key** if you already have one.
+2. Give the key a **Name**, and optionally a **Description**.
+3. Set **Expiration (days)**. The form shows the date the key will expire.
+4. Tick the **SCOPES** the key needs. Each scope says what it allows.
+5. Press **Generate Access Key**.
+
+The portal then shows the key's **Key:** and **Secret:**. Copy the secret at once, because the portal shows it only once. Press **Revoke** to stop a key working. **API Documentation**, beside the keys, opens the API reference.
+
+## Next steps
+
+- **[Browse Data](/guide/data-browser.md)**: see what clinical and genomic data the portal holds.
+- **[Cohort Builder](/guide/cohort-builder.md)**: define a group of participants and request access to its data.
+- **[Variant Xplorer](/guide/variant-explorer.md)**: search genetic variants across the participants.
 
 ## Support
 
-For account-related issues, contact {{SUPPORT_EMAIL}}.
+For account problems, email {{SUPPORT_EMAIL}}.
