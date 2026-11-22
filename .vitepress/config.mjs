@@ -69,7 +69,6 @@ export default withMermaid({
           items: [
             { text: `What is ${currentConfig.PLATFORM_NAME}?`, link: "/guide/what-is-biobank" },
             { text: "Getting Started", link: "/guide/getting-started" },
-            { text: "Indiana Biobank vs. Provena", link: "/guide/biobank-vs-axin" },
           ],
         },
         {
