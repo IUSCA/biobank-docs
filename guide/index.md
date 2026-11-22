@@ -2,7 +2,7 @@
 
 - [What is {{PLATFORM_FULL_NAME}}?](/guide/what-is-biobank.md)
 - [Getting Started (Account Creation & Authentication)](/guide/getting-started.md)
-- [Indiana Biobank vs. AnalytiXIN](/guide/biobank-vs-axin.md)
+- [Indiana Biobank vs. Provena](/guide/biobank-vs-axin.md)
 
 ### Platform Features
 
