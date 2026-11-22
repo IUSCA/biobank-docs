@@ -1,88 +1,111 @@
 # Cohort Builder
 
-The Cohort Builder lets you define groups of participants using clinical and genomic criteria, then request access to their data for analysis in the Trusted Research Environment.
+The Cohort Builder lets you define a group of participants from clinical or genetic criteria. You can then request access to that group's data for analysis in a workspace.
 
-[{{WEBSITE_URL}}cohorts]({{WEBSITE_URL}}cohorts)
+Open it with **Cohort Builder** in the sidebar, or at [{{WEBSITE_URL}}cohorts]({{WEBSITE_URL}}cohorts).
 
-{{COHORT_BUILDER_VIDEO_EMBED_HTML}}
+## What you see
 
-## Cohort Types
+The Cohort Builder shows counts and summaries, never individual records. A cohort's size reads as a number of participants out of the total in the analysis release. An analysis release is a fixed package of data released for analysis. A cohort keeps the analysis release it was built against.
 
-**Phenotype Cohorts** are built from clinical data: diagnoses, medications, lab results, demographics, and hospitalizations.
+Small counts are hidden to protect privacy. A cohort below the minimum size shows its size with a "<" sign, and its data panel says "Not enough participants to show data."
 
-**Genotype Cohorts** are built from genetic variant data: specific variants, gene regions, or variant annotations.
+## Create a cohort
 
-**Combination Cohorts** are built by combining two or more existing cohorts using set operations — useful when you want to intersect clinical and genomic criteria, or compare populations.
+On the cohort list, press **Create New Cohort** and choose a kind.
 
-## Building a Phenotype Cohort
+- **Phenotype-based** cohorts use clinical and demographic data, such as diagnoses, lab results, medications, procedures, and hospitalizations.
+- **Genotype-based** cohorts use genetic variants.
 
-1. Open the Cohort Builder and choose **New Phenotype Cohort**
-2. Add filters — for example, an age range, a diagnosis code, or a lab value
-3. Set the matching logic for your filters:
-   - **All** (AND) — participant must match every filter
-   - **Any** (OR) — participant must match at least one filter
-   - **Excluding All** (NOT) — participant must match none of the filters
+Inside the builder, the round plus button offers **New Phenotype-based Cohort**, **New Genotype-based Cohort**, and **Search Cohorts**. You can hold up to five cohorts in the builder at once.
 
-   ![Boolean logic screenshot](/public/images/screenshots/cohort-builder-or.jpg)
+### Build a phenotype-based cohort
 
-4. Review the participant count as you refine your criteria
-5. When satisfied, save and name your cohort
+1. Press **Add Filter** and pick a category and a field. The search box finds filters by name.
+2. Set the value you want, such as a diagnosis, a lab result range, or an age.
+3. Choose how filters combine under **Matching**: **All**, **Any**, or **Excluding all**.
+4. Watch the participant count change as you refine the filters.
+5. Press **Save**.
 
-## Building a Genotype Cohort
+**Undo**, **Redo**, and **Clear All Filters** sit above the filters. The [{{PHENOTYPE_REFERENCE_TITLE}}]({{PHENOTYPE_REFERENCE_PATH}}) lists every category and field.
 
-1. Open the Cohort Builder and choose **New Genotype Cohort**
-2. Use the embedded Variant Xplorer to search for variants by gene, genomic coordinates, or rsID
-3. Apply filters (allele frequency, predicted impact, variant type, etc.) to narrow results
-4. Save and name your cohort
+### Build a genotype-based cohort
 
-## Combining Cohorts
+1. Choose a **Genotype Release**.
+2. Choose the **Zygosities** to include: Ref/Ref, Ref/Alt, Alt/Alt, or Missing.
+3. Add **Variant Filters** to narrow the variants.
+4. Press **Save**.
 
-Use a Combination Cohort to apply set operations across two or more existing cohorts:
+**Open in Variant Xplorer** opens the same search in [Variant Xplorer](/guide/variant-explorer.md), which has more search tools.
 
-- **Intersection (AND)** — participants in both cohort A and cohort B
-- **Union (OR)** — participants in cohort A or cohort B (or both)
-- **Exclusion (NOT)** — participants in cohort A but not cohort B
+### Combine cohorts
 
-![Boolean logic screenshot](/public/images/screenshots/cohort-builder-or-alt.jpg)
+When the builder holds two or more cohorts, a **Combined Cohort** panel appears. Choose how each pair combines in **Combine Cohorts**:
 
-![Boolean logic screenshot](/public/images/screenshots/cohort-builder-or-alt-modal.jpg)
+- **Union**: everyone in either cohort.
+- **Intersection**: only people in both cohorts.
+- **Difference**: people in the first cohort but not the second.
+- **Unique (Symmetric Difference)**: people in one cohort or the other, but not both.
 
-## Cohort Visibility and Sharing
+Press **Save** on the panel to keep the combination as its own cohort.
 
-When you save a cohort, you can control who can see and use it:
+## Save a cohort
 
-- **Private** (default) — only you can access it
-- **Public** — visible to all users on the platform; others can submit an access request to use it
+**Save** asks for a **Name** and a **Description**. The description must be at least 10 characters. Reviewers read it when you request access, so describe the population in plain words, not as a list of filters.
 
-You can also share a cohort directly with specific users, giving them access without requiring a formal request.
+The portal may suggest a name and description as you build. A suggestion can be wrong or incomplete, so check and edit it before you save.
 
-## Writing a Good Description
+## Find and manage your cohorts
 
-When saving a cohort, a description is required. This is used as part of the governance review process, so it should be written in plain language that researchers from different disciplines can understand — not just in terms of the filters you selected.
+The cohort list has a search box for a cohort's name, ID, or description. **Filters** narrows the list by **Created by me** or **Shared with me**, visibility, and type. **Show Archived** and **Show Favorited** change what the list includes.
 
-The system may generate a description automatically, but auto-generated descriptions can be inaccurate or incomplete. Review it carefully and edit as needed to accurately describe the population your cohort represents and why this combination of criteria defines your target group.
+Each cohort's **Actions** menu holds:
 
-## Requesting Data Access
+- **Access Data**, to request access to its data;
+- **Request Letter of Support**, for a grant proposal;
+- **Duplicate**, to make an editable copy;
+- **Share**, to give named people access;
+- **Change Visibility**;
+- **Archive** or **Restore from archive**, and **Delete** when allowed.
 
-Once you've finalized a cohort, you can request access to participant-level clinical and genomic data for analysis in the Trusted Research Environment.
+A cohort locked from an investigation segment also appears in your list. It cannot be edited in the Cohort Builder.
 
-1. **Lock the cohort** — locking preserves its exact composition and prevents further changes. If you need to make changes later, duplicate the cohort first.
-2. **Submit a data access request** from the locked cohort
+## Visibility and locking
 
-   ![Request access step 1](/public/images/screenshots/cohort-builder-request-access-1.png)
-   ![Request access step 2](/public/images/screenshots/cohort-builder-request-access-2.png)
+A cohort is **Private**, **Unlisted**, or **Public**.
 
-3. Your request will be reviewed by the data governance committee
-4. Upon approval, you can access the Trusted Research Environment using your institutional Microsoft account
+- **Private** is where every cohort starts. Only you can open and edit it.
+- **Unlisted** means anyone with the link can open it, but it does not appear in search. Making a cohort Unlisted locks it, and it can no longer be edited.
+- **Public** cohorts appear in search for every user. Only an administrator can make a cohort Public.
 
-### Tracking Your Request
+You can move an Unlisted cohort back to Private only when no other cohort uses it. To change a locked cohort, use **Duplicate** and edit the copy.
 
-After submitting, you can monitor your request's status from within the portal:
+**Share** adds named people under **People with access**. Sharing a private cohort first asks you to make it Unlisted.
 
-![tracking access requests](/public/images/screenshots/access-requests-tracking.png)
+## Request access to a cohort's data
 
-Status values you may see: Submitted, Under Review, Approved, Denied. You'll also receive email notifications when the status changes.
+1. In the cohort's **Actions** menu, choose **Access Data**.
+2. If the cohort is private, the portal asks you to make it Unlisted first. Confirm the statements and press **Change Visibility & Continue**.
+3. Press **Request Access**. A request form opens in a new tab. Fill it in and submit it.
+4. Track the request under **Access Requests** in the sidebar.
 
-## Trusted Research Environment
+If you close the form before submitting, open the request and press **Continue Access Request**. Collaborators named in the form must have portal accounts that use the same email address.
 
-Once your access request is approved, you'll work with your cohort's data inside a Trusted Research Environment. See [Trusted Research Environment Setup](/guide/trusted-research-environment-setup.md) for how to connect.
+### Request status
+
+The **Access Requests** page lists your requests with their status. Open a request to see its **Review Progress**.
+
+- **INITIATED**: the request exists, but the form is not yet submitted.
+- **PENDING**: the form is submitted and under review.
+- **APPROVED** or **APPROVED_WITH_REVISIONS**: the request was approved, and its workspace appears under **Workspaces**.
+- **REJECTED**: the request was turned down. You can submit a new one.
+- **CANCELED**: the request was withdrawn. You can submit a new one.
+- **EXPIRED**: the approval has ended. You can submit a new one.
+
+The portal does not email you when the status changes. Check the **Access Requests** page.
+
+Once a request is approved, open its workspace from **Workspaces** in the sidebar. See [Workspaces](/guide/trusted-research-environment-setup.md).
+
+## Request a letter of support
+
+**Request Letter of Support** asks for a letter that supports a grant proposal using a cohort. It is in the cohort's **Actions** menu and on the builder's toolbar. The form asks for the **Cohort**, the **Grant title**, and the **Supporting mechanism**, such as NIH R01. The request goes to the portal's team, who reply to you.
