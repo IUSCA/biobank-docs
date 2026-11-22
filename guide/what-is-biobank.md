@@ -1,19 +1,21 @@
 # What is {{PLATFORM_FULL_NAME}}?
 
-{{PLATFORM_FULL_NAME}} is a research portal for exploring multi-modal clinical and genomic data collected from a diverse patient population across Indiana. It is designed for researchers who need to identify participant cohorts, investigate genetic variants, and access data for analysis.
+{{PLATFORM_FULL_NAME}} is a research portal for de-identified clinical and genomic data. Researchers use it to find out what data exists, define groups of participants, and analyze approved data in a secure workspace.
 
-## What You Can Do
+The portal shows counts and summaries, never individual records. Small counts are hidden to protect participants. Participant-level data is available only inside a workspace, after an approved access request.
 
-- **Browse available data** — explore what diagnoses, lab tests, medications, and genomic variants are present in the dataset before committing to a research question ([Data Browser](/guide/data-browser.md))
-- **Build cohorts** — define groups of participants using clinical and genomic criteria, then request access to their data ([Cohort Builder](/guide/cohort-builder.md))
-- **Investigate variants** — search and filter genetic variants across the participant population ([Variant Xplorer](/guide/variant-explorer.md))
-- **Analyze data** — work with approved cohort data inside a secure, controlled environment ([Trusted Research Environment](/guide/trusted-research-environment-setup.md))
-- **Access data programmatically** — use the CLI or API to retrieve data as part of automated workflows ([API Client](/guide/api-client.md))
+## What you can do
 
-## Who Has Access
+- **Browse the data.** See what conditions, lab tests, medications, procedures, and genomes the portal holds. Pick terms and turn them into a cohort. See [Browse Data](/guide/data-browser.md).
+- **Build cohorts.** Define a group of participants from clinical or genetic criteria. See [Cohort Builder](/guide/cohort-builder.md).
+- **Search variants.** Find genetic variants and count the participants who carry them. See [Variant Xplorer](/guide/variant-explorer.md).
+- **Work on a research question.** Keep a question's plan, populations, results, and findings together, with an optional assistant. See [Investigations](/guide/investigations.md). Not every portal or account offers investigations yet.
+- **Request access to data.** Ask for a cohort's participant-level data, and follow the request under **Access Requests**. See [Request access to a cohort's data](/guide/cohort-builder.md#request-access-to-a-cohort-s-data).
+- **Analyze approved data.** Work in your own workspace in the trusted research environment, and send results out through a reviewed export. See [Workspaces](/guide/trusted-research-environment-setup.md).
+- **Use the API.** Reach your cohorts and their files from scripts with an access key. See [API Client](/guide/api-client.md).
 
-The portal is available to qualified researchers from academic institutions, healthcare organizations, and industry partners. Access to participant-level data is governed by data use agreements and research protocols.
+## Who has access
 
-To request access, [create an account](/guide/getting-started.md) and submit a data access request through the Cohort Builder once you've defined your research cohort.
+The portal is for qualified researchers. Access to participant-level data is governed by data use agreements and a review of each request.
 
-For questions, contact {{SUPPORT_EMAIL}}.
+To get started, [create an account](/guide/getting-started.md). For questions, email {{SUPPORT_EMAIL}}.
