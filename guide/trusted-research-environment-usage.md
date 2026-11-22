@@ -1,95 +1,66 @@
-# Trusted Research Environment Usage
+# Using a Workspace
 
-This document outlines the usage of the Trusted Research Environment (TRE).
-
-If you haven't already, please [request and connect to your environment](/guide/trusted-research-environment-setup.md) first.
-
-## Desktop Environment
-
-Once connected, you will see a Linux desktop environment in your web browser:
-
-![Empty Desktop Example](../public/images/screenshots/tre-desktop-empty.png)
-
-![Application Launcher](/public/images/screenshots/tre-desktop-applications.png)
-
-Terminal Application:
-
-![Launch Terminal](../public/images/screenshots/tre-terminal-launch.png)
-
-![Terminal Example](../public/images/screenshots/tre-terminal-example.png)
-
-## Working with Data
-
-Shared data will be available in designated directories (typically `/data/common`)
-
-**Data Location:**
-- Your approved cohort data will be pre-loaded in designated directories
-- Clinical data is typically in structured formats (CSV, TSV, or database files)
-- Genomic data may be in standard formats (VCF, BAM, FASTQ, etc.)
-
-**Genome Build:** Genotype data delivered through the platform is aligned to **GRCh38**. If you're staging your own reference data (e.g. an imputation reference panel) or comparing against externally-published resources, make sure the build matches — GRCh37/hg19-based reference files are not compatible without a liftover step.
-
-Please configure your scripts to write any outputs to `/data/output`
-
+This page describes what is inside a workspace. To get a workspace and open it, see [Workspaces](/guide/trusted-research-environment-setup.md).
 
 {{TRE_PORTAL_ACCESS_NOTE}}
 
-In order to conserve cloud resources, raw sequencing data is made available 'on-demand' by default. For downloading raw data within the TRE, please refer to the [API client guide](api-client.md)
+## The desktop
 
-## Network Access
+**Open Workspace** opens a Linux desktop in your browser. The desktop has launchers for **JupyterLab** and **RStudio**. A terminal opens from the applications menu.
 
-TRE workspaces have **no outbound internet access** by design — this is a data governance requirement, not a configuration gap. In practice this means:
+An idle workspace stops itself after about two hours. A warning appears on the desktop before it stops. Your files in `/data/work` are kept when the workspace stops.
 
-- Any workflow step that expects to reach an external service at runtime (an imputation server such as Michigan or TOPMed, a package installer that fetches from the internet, a reference database download) will not work from inside the workspace.
-- Equivalent local tools and pre-staged reference data are the supported alternative — for example, local phasing/imputation against a reference panel staged into your workspace, rather than uploading to an external imputation service. See the Genomic Analysis Tools list below for what's available today.
-- If your analysis plan depends on a specific external service, tell us before you start — there may be a local equivalent, or it may need a separate discussion about whether/how it fits the no-egress requirement.
-- If you need software or reference data that isn't listed below, contact the TRE team — new tools are added to the workspace image on request; there's currently no self-service form, so just reach out directly.
+## Where your data is
 
-## Running Analysis
+- `/data/input` holds the approved data for your project, and files approved through **Load data into workspace**. It is read-only.
+- `/data/work` is your working folder. It keeps its contents when the workspace stops or is rebuilt. Terminals, JupyterLab, and RStudio start there.
 
-```
-cd /data/common/scripts
-R < example_script.r --no-save
-```
+Save your work in `/data/work`. Files saved anywhere else, such as your home folder, can be lost when the workspace is rebuilt. Only files in `/data/work` can be sent for export.
 
+Genotype data delivered through the portal is aligned to GRCh38. Reference files built on GRCh37 or hg19 need a liftover step before you compare them.
 
-## Available Analysis Tools
+## No internet access
 
-The Trusted Research Environment comes with a suite of pre-installed tools for various types of analysis:
+Workspaces have no general internet access. This is a data governance requirement, not a setting.
 
-#### General Purpose Tools
-- **RStudio**: An integrated development environment (IDE) for R.
-- **R**: A language and environment for statistical computing and graphics, with various packages installed, including Bioconductor.
-- **Python**: A versatile programming language widely used for data analysis, with common scientific libraries.
-- **Jupyter Notebooks**: An interactive computing environment that allows you to create and share documents containing live code, equations, visualizations, and narrative text.
+- A workflow step that reaches an outside service will fail. Examples are an online imputation server, a package installer that downloads from the internet, and a reference database download.
+- Use local tools and reference data in the workspace instead.
+- If your analysis depends on an outside service or on software that is not installed, email {{SUPPORT_EMAIL}} before you start. New tools are added to the workspace image on request.
 
-#### Genomic Analysis Tools
-- **PLINK 1.9** and **PLINK 2.0**: Whole-genome association analysis toolsets.
-- **GCTA**: GRM computation, GREML heritability estimation, and COJO conditional/joint association analysis.
-- **REGENIE**: Whole-genome regression for biobank-scale GWAS; preferred over PLINK mixed models at larger cohort sizes.
-- **SAIGE** and **PRSice-2**: Mixed-model association for case-control imbalance, and polygenic risk score computation, respectively. These install best-effort during our build process — if either seems to be missing from your workspace, let us know rather than assuming it should be there.
-- **Nextflow** + **pgsc_calc**: Pipeline runner and the pgscatalog polygenic-score/ancestry pipeline, pre-cached for offline use (no internet access needed to run it).
-- **IGV (Integrative Genomics Viewer)**: A high-performance visualization tool for genomic data.
-- **GATK (Genome Analysis Toolkit)**: A comprehensive toolkit for variant discovery in high-throughput sequencing data.
-- **samtools**, **bcftools**, **tabix**, **vcftools**, **bedtools**: Standard utilities for VCF/BAM/BED manipulation.
-- **HIBAG**: HLA imputation (R package, see below).
-- **Miniconda** + **JupyterLab**: System-wide conda environment with common Python scientific/bioinformatics libraries (`numpy`, `pandas`, `scipy`, `scikit-learn`, `biopython`, `pysam`, `cyvcf2`) and a JupyterLab notebook server (with an R kernel via IRkernel).
-- **biobank-client** / `tre-biobank`: CLI wrapper for on-demand access to raw sequencing data from the Indiana Biobank API (see the [API client guide](api-client.md)).
-- **ANNOVAR**: Variant annotation tool. Its license requires individual registration at openbioinformatics.org, so the licensed download isn't pre-loaded — contact the TRE team if you need it staged for your workspace.
-- **METAL**: A tool for meta-analysis of genome-wide association scans.
+## Installed tools
 
-We're actively expanding this list based on researcher requests — **IMPUTE2**, **SHAPEIT4**, and **EIGENSTRAT** are in progress as of late 2026 to support local imputation and PCA workflows, and will be added to this list once they land in a production workspace image. See the Network Access note above for how local imputation works without external servers like TOPMed or Michigan. If a tool you need isn't listed here, ask — it's usually a matter of adding it to the next workspace image build, not a hard blocker.
+These tools are part of the workspace image definition.
 
-## R Packages
+**General**
 
-The R environment includes a comprehensive set of packages for statistical analysis and bioinformatics, including but not limited to:
+- R with RStudio Desktop, including Bioconductor.
+- Python through a system-wide Miniconda, with JupyterLab and an R kernel.
+- Python libraries: numpy, pandas, scipy, scikit-learn, statsmodels, matplotlib, seaborn, biopython, pysam, and cyvcf2.
+- Firefox, LibreOffice Calc and Writer, and a PDF viewer.
 
-- `data.table`, `dplyr`, `tidyverse`, `ggplot2`, `ggrepel`, `DT`: General data manipulation and visualization.
-- `survival`, `survminer`, `lme4`, `lmerTest`, `glmnet`, `logistf`, `lmtest`: Statistical modeling.
-- `tableone`, `gtsummary`, `meta`: Summary tables and meta-analysis.
-- `DESeq2`, `biomaRt`, `SNPRelate`, `GWASTools`, `SKAT`, `HIBAG` (Bioconductor): Genomics-focused analysis.
-- `bigsnpr` (includes LDpred2) and `METAL`: Polygenic scoring and GWAS meta-analysis.
-- `PheWAS`: Phenome-wide association scanning (installed from a pinned GitHub release rather than CRAN).
-- `qqman`: QQ and Manhattan plots.
+**Genetics and genomics**
 
-Note: `robustSKAT` is **not currently installed** — it isn't available for our current Bioconductor/R version combination. If your analysis depends on it, let us know so we can evaluate alternatives or track when it becomes available again.
+- PLINK 1.9 and PLINK 2.0, for association analysis.
+- REGENIE, for whole-genome regression in large GWAS.
+- GCTA, for genetic relationship matrices, heritability, and conditional analysis.
+- PRSice-2, for polygenic risk scores.
+- Nextflow with the pgsc_calc pipeline, cached for offline use.
+- SHAPEIT4 and IMPUTE2, for local phasing and imputation.
+- EIGENSOFT, including smartpca and convertf, for principal components.
+- GATK, for variant discovery.
+- IGV, started from a terminal with `igv`.
+- samtools, bcftools, tabix, vcftools, and bedtools.
+
+**R packages**
+
+- Data and plots: data.table, dplyr, tidyverse, ggplot2, ggrepel, and DT.
+- Statistics: survival, survminer, lme4, lmerTest, glmnet, logistf, lmtest, tableone, gtsummary, and meta.
+- Genomics: DESeq2, biomaRt, SNPRelate, GWASTools, SKAT, and HIBAG.
+- Offline annotation and plots: TxDb.Hsapiens.UCSC.hg38.knownGene, org.Hs.eg.db, Gviz, and karyoploteR.
+- PheWAS and qqman.
+
+ANNOVAR needs individual registration, so it is not installed. Email {{SUPPORT_EMAIL}} if you need it staged for your workspace.
+
+## Getting data from the portal's API
+
+`tre-biobank` runs the portal's [API client](/guide/api-client.md) inside a workspace. It reads the API key that the portal's team places in `/data/input/api-key.json`. Without that file it stops and says so.
