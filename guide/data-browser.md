@@ -1,38 +1,39 @@
-# Data Browser
+# Browse Data
 
-The Data Browser lets you explore what clinical and genomic data is available before building a cohort. Use it to discover relevant diagnosis codes, lab tests, medications, or variants, then carry those terms into the Cohort Builder.
+Browse Data shows what clinical and genomic data the portal holds, before you build a cohort. Use it to find the conditions, lab tests, medications, procedures, and observations you need, then turn them into a cohort.
 
-If you need a full inventory of phenotype domains represented in {{PLATFORM_NAME}}, see the [{{PHENOTYPE_REFERENCE_TITLE}}]({{PHENOTYPE_REFERENCE_PATH}}).
+Open it with **Browse Data** in the sidebar. It is also the page you see after signing in. It is at [{{WEBSITE_URL}}browse]({{WEBSITE_URL}}browse).
 
-[{{WEBSITE_URL}}data_browser]({{WEBSITE_URL}}data_browser)
+Every number on these pages counts participants or records. None shows an individual record. For every category and field the Cohort Builder offers, see the [{{PHENOTYPE_REFERENCE_TITLE}}]({{PHENOTYPE_REFERENCE_PATH}}).
 
-## Browsing Available Data
+## Which data you are seeing
 
-The Data Browser is organized into categories:
+Browse Data describes one analysis release. An analysis release is a fixed package of data released for analysis. A small label at the top names the analysis release and the date its data runs through.
 
-![Data Browser - Overview](/public/images/screenshots/data-browser-overview.png)
+## The Browse Data page
 
-**Clinical data categories:**
-- **Diagnoses** — ICD-coded conditions
-- **Labs** — laboratory test results
-- **Medications** — prescribed drugs
-- **Hospitalizations** — inpatient stay records
+- **What are you looking for?** is a search box. Type a name or a code and press Enter to search the catalog. **Try** offers example searches.
+- Four cards lead to the main tasks: **Browse the catalog**, **Build a cohort**, **Explore variants**, and **Request data**.
+- **Pick up where you left off** lists your recent cohorts and access requests, with **New cohort** and **All cohorts →**.
+- **What this biobank holds** is a table of the data. For each kind of clinical record it shows the volume, the number of distinct terms, and the participants with any. For genomes it shows the volume, the genome build, and the participants sequenced. **Full breakdown →** opens the catalog, and **Who is in it →** opens the population page.
 
-**Genomic data:**
-- **Variants** — genetic variants called across the participant population, with annotation databases (e.g., gnomAD, ClinVar)
+## Search the catalog
 
-Each category shows the number of distinct terms and the number of participants with data in that category.
+The catalog lists everything the analysis release records, with how many participants have each term.
 
-Click any category to browse its contents.
+1. Type in the search box and press Enter. You can search by name, by a synonym or abbreviation, or by a code.
+2. Narrow the results with the filters above the list, which group terms by kind of record.
+3. A row marked **group** holds other terms. Open it to see what is under it.
+4. Press the plus button at the end of a row to pick that term. Pick as many terms as you like.
+5. Under **Your selection**, press **Create a cohort from these**. The Cohort Builder opens with your terms as its first filters.
 
-## Searching Within a Category
+Picking a group takes every code under it. Pick codes from inside the group when you want only some of them. **Clear** empties your selection.
 
-Once you've selected a category, use the keyword search to find specific terms:
+## Who is in this analysis release
 
-![Data Browser - Search Diagnosis](/public/images/screenshots/data-browser-dx-search.png)
+The population page describes the participants in the analysis release. Its panels are **Demographics**, **Follow-up**, **Hospitalizations**, and **Biometrics**.
 
-Results update as you type. This is useful for finding the exact code or terminology used in the dataset before you build a filter in the Cohort Builder.
+## Next steps
 
-## Moving to the Cohort Builder
-
-When you find terms you want to use as filters, take note of them and open the [Cohort Builder](/guide/cohort-builder.md). Use the same terms when adding filters — the Cohort Builder uses the same underlying terminology as the Data Browser.
+- [Cohort Builder](/guide/cohort-builder.md): define a group of participants from these terms.
+- [Variant Xplorer](/guide/variant-explorer.md): search genetic variants.

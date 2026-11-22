@@ -77,7 +77,7 @@ export default withMermaid({
           items: [
             { text: "Cohort Builder", link: "/guide/cohort-builder" },
             { text: "Variant Xplorer", link: "/guide/variant-explorer" },
-            { text: "Data Browser", link: "/guide/data-browser" },
+            { text: "Browse Data", link: "/guide/data-browser" },
             { text: "Investigations", link: "/guide/investigations" },
             { text: currentConfig.PHENOTYPE_REFERENCE_TITLE, link: currentConfig.PHENOTYPE_REFERENCE_LINK },
             { text: "Trusted Research Environment Setup", link: "/guide/trusted-research-environment-setup" },
